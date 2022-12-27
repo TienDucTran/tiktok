@@ -4,7 +4,7 @@ function App (){
     
     return (
         <div>
-            <h1>oke</h1>
+            <h1>gio sao day</h1>
         </div>
     )
 }
