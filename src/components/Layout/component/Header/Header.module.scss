@@ -36,14 +36,15 @@
 
     input {
         flex: 1;
-        height: 60%;
+        font-size: 1.6rem;
+        height: 70%;
         caret-color: var(--primary);
         padding: 0;
         color: #161823;
         background-color: transparent;
     }
     input:not(:placeholder-shown) ~ .search-btn {
-        color: rgba(22, 24, 35, 0.75);
+        color: var(--button-color);
     }
     input:not(:placeholder-shown) ~ .clear {
         display: block;
@@ -54,7 +55,7 @@
         position: absolute;
         height: calc(var(--search-height) - var(--search-top-spacer) * 2);
         width: 1px;
-        background-color: #1618231f;
+        background-color: var(--border-color);
         top: var(--search-top-spacer);
         right: var(--search-button-width);
     }
@@ -67,7 +68,7 @@
     padding: 5px 12px;
     font-size: 1.4rem;
     font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
+    color: #16182380;
 }
 .clear,
 .loading {
@@ -99,4 +100,8 @@
     &:active {
         background: rgba(22, 24, 35, 0.06);
     }
+}
+
+.icon-plus {
+    margin-right: 12px;
 }
