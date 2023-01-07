@@ -1,0 +1,16 @@
+//Menu wrapper
+.menu-list {
+    width: 224px;
+}
+.menu-popper {
+    padding: 8px 0px;
+}
+.menu-item {
+    color: var(--button-color);
+    width: 100%;
+    text-align: left;
+    padding: 8px 8px 8px 16px;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}

@@ -24,6 +24,11 @@
 .search-result {
     width: 361px;
 }
+.search-popper {
+    margin-top: 8px;
+    padding: 8px 8px 0 0;
+    overflow-y: scroll;
+}
 .search {
     position: relative;
     height: var(--search-height);
@@ -104,4 +109,12 @@
 
 .icon-plus {
     margin-right: 12px;
+}
+.more-btn {
+    font-size: 1.7rem;
+    min-width: 28px;
+    padding: 0px 4px;
+    color: var(--button-color);
+    background-color: var(--white);
+    margin-left: 16px;
 }

@@ -6,23 +6,29 @@
     border-radius: 4px;
     cursor: pointer;
     background-color: var(--white);
-    border: 1px solid;
+    border: 1px solid transparent;
     user-select: none;
-    + .wrapper {
-        margin-left: 16px;
-    }
+
     &.disable {
         pointer-events: none;
         opacity: 0.5;
     }
 }
 .icon {
-    font-size: 18px;
-    position: absolute;
-    right: 6px;
-    top: 50%;
-    transform: translateY(-45%);
+    display: inline-block;
+    width: 23px;
+    font-size: 20px;
+    margin-right: 8px;
+    text-align: center;
 }
+//* làm riêng cho nút tua lên
+// .icon {
+//     font-size: 18px;
+//     position: absolute;
+//     right: 6px;
+//     top: 50%;
+//     transform: translateY(-45%);
+// }
 
 .primary {
     padding: 6px 8px;
@@ -35,6 +41,7 @@
     }
 }
 .upload {
+    margin-right: 16px;
     min-width: 110px;
     padding: 6px 16px;
     color: var(--button-color);
