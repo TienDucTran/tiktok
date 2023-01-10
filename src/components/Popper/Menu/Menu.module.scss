@@ -5,12 +5,35 @@
 .menu-popper {
     padding: 8px 0px;
 }
+//MenuItem
 .menu-item {
     color: var(--button-color);
     width: 100%;
+    min-height: 42px;
     text-align: left;
     padding: 8px 8px 8px 16px;
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
+}
+//Header
+.header {
+    position: relative;
+    height: 50px;
+    margin: -8px;
+}
+.back-btn {
+    background-color: transparent;
+    color: var(--button-color);
+    font-size: 1.8rem;
+    width: 20px;
+    height: 100%;
+    margin-left: 28px;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
