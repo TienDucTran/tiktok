@@ -20,6 +20,7 @@
 }
 .logo {
     height: 42px;
+    cursor: pointer;
 }
 .search,
 .search-result {
@@ -107,10 +108,14 @@
         background: rgba(22, 24, 35, 0.06);
     }
 }
-
+.actions {
+    display: flex;
+    align-items: center;
+}
 .icon-plus {
     margin-right: 12px;
 }
+//* MENU ITEM
 .more-btn {
     font-size: 1.7rem;
     min-width: 28px;
@@ -118,5 +123,22 @@
     color: var(--button-color);
     background-color: var(--white);
     margin-left: 16px;
+    cursor: pointer;
+}
+//* USER
+.user-btn {
+    font-size: 22px;
+    min-height: 32px;
+    min-width: 32px;
+    background-color: transparent;
+    color: var(--button-color);
+    margin-right: 16px;
+    cursor: pointer;
+}
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
     cursor: pointer;
 }
