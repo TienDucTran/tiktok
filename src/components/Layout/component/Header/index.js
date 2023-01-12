@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faPlus, faEllipsisVertical, faCircleQuestion, faKeyboard, faMoon, faEarthAsia, faCommentDots, faPaperPlane, faVideoCamera, faGear, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
@@ -14,11 +12,14 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import { Menu } from '~/components/Popper';
+import { CameraIcon, FeedbackIcon, InboxIcon, KeyboadIcon, LanguageIcon, LogoutIcon, MenuIcon, MessageIcon, PersonIcon, PlusIcon, SettingIcon, ThemeIcon, TiktokIcon } from '~/components/Icons';
+import Inbox from '~/components/Popper/Inbox';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles)
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -37,17 +38,17 @@ const MENU_ITEMS = [
         }
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <FeedbackIcon />,
         title: 'Feedback and help',
         to: '/feedback'
 
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboadIcon />,
         title: 'Keyboard shortcuts',
     },
     {
-        icon: <FontAwesomeIcon icon={faMoon} />,
+        icon: <ThemeIcon />,
         title: 'Dark mode ',
 
     },
@@ -74,26 +75,26 @@ function Header() {
     const userMenu = [
 
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <PersonIcon />,
             title: 'View profile',
             to: '/@tienducne'
         },
         {
-            icon: <FontAwesomeIcon icon={faTiktok} />,
+            icon: <TiktokIcon />,
             title: 'Get Coins',
         },
         {
-            icon: <FontAwesomeIcon icon={faVideoCamera} />,
+            icon: <CameraIcon />,
             title: 'LIVE Studio',
         },
         {
-            icon: <FontAwesomeIcon icon={faGear} />,
+            icon: <SettingIcon />,
             title: 'Settings',
             to: '/setting'
         },
         ...MENU_ITEMS,
         {
-            icon: <FontAwesomeIcon icon={faArrowRightToBracket} />,
+            icon: <LogoutIcon />,
             title: 'Log out',
             href: 'https://www.youtube.com/watch?v=iOoSBvWBeP8&list=RD6tmhg_QFPcg&index=21',
             separate: true
@@ -135,23 +136,21 @@ function Header() {
             </HeadlessTippy>
 
             <div className={cx('actions')}>
-                <Button upload>
-                    <FontAwesomeIcon className={cx('icon-plus')} icon={faPlus} />
-                    <span>Upload</span>
-                </Button>
+                <Button upload icon={<PlusIcon />}> Upload</Button>
                 {currentUser ? (
                     <>
                         <Tippy delay={[0, 100]} content='Messages' placement='bottom'>
-                            <button className={cx('user-btn')}>
-                                <FontAwesomeIcon icon={faPaperPlane} />
+                            <button className={cx('social-icon')}>
+                                <MessageIcon className={cx('message-icon')} />
                             </button>
+
                         </Tippy>
 
-                        <Tippy delay={[0, 100]} content='Inbox' placement='bottom'>
-                            <button className={cx('user-btn')}>
-                                <FontAwesomeIcon icon={faCommentDots} />
+                        <Inbox>
+                            <button className={cx('social-icon')}>
+                                <InboxIcon />
                             </button>
-                        </Tippy>
+                        </Inbox>
 
                     </>
                 ) : (
@@ -159,17 +158,17 @@ function Header() {
                         <Button primary>Log in</Button>
                     </>
                 )}
-                <Menu Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                     {currentUser ? (
-                        <img
+                        <Image
                             className={cx('user-avatar')}
-                            src='https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/313418667_3398784547021624_2339568373130949220_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Q271wuMERd4AX9nEQxn&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA7Zeax-RMzt2wm3rMI4acfVmKbcobVtIAksnz-dh-Jog&oe=63B95296'
-                            alt='Trantienduc'>
-
-                        </img>
+                            src='https://scontenta.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/313418667_3398784547021624_2339568373130949220_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Q271wuMERd4AX9nEQxn&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA7Zeax-RMzt2wm3rMI4acfVmKbcobVtIAksnz-dh-Jog&oe=63B95296'
+                            alt='Trantienduc'
+                            fallback='https://yt3.ggpht.com/yti/AJo0G0nLQm5IV1Bri37tiX5bz3sx5s9xgpaenqaPsA4mlg=s88-c-k-c0x00ffffff-no-rj-mo'
+                        />
                     ) : (
-                        <button className={cx('more-btn')}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        <button className={cx('menu-btn')}>
+                            <MenuIcon />
                         </button>
                     )}
                 </Menu>

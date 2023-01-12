@@ -1,6 +1,7 @@
 .wrapper {
     min-width: 100px;
-    font-weight: 700;
+    font-family: 'ProximaNova', sans-serif;
+    font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.2rem;
     border-radius: 4px;
@@ -16,10 +17,8 @@
 }
 .icon {
     display: inline-block;
-    width: 23px;
-    font-size: 20px;
+    height: 20px;
     margin-right: 8px;
-    text-align: center;
 }
 //* làm riêng cho nút tua lên
 // .icon {
@@ -37,14 +36,22 @@
     border-color: transparent;
 
     &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.06),
+                rgba(0, 0, 0, 0.06)
+            ),
+            #fe2c55;
     }
 }
 .upload {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
     margin-right: 16px;
     min-width: 110px;
-    padding: 6px 16px;
-    color: var(--button-color);
+    padding: 0px 16px;
+    color: var(--input-color);
     border-color: var(--border-color);
 
     &:hover {

@@ -47,7 +47,7 @@
         height: 70%;
         caret-color: var(--primary);
         padding: 0;
-        color: #161823;
+        color: var(--input-color);
         background-color: transparent;
     }
     input:not(:placeholder-shown) ~ .search-btn {
@@ -112,33 +112,31 @@
     display: flex;
     align-items: center;
 }
-.icon-plus {
-    margin-right: 12px;
-}
 //* MENU ITEM
-.more-btn {
-    font-size: 1.7rem;
+.menu-btn {
+    font-size: 0.2rem;
     min-width: 28px;
     padding: 0px 4px;
-    color: var(--button-color);
+    color: var(--input-color);
     background-color: var(--white);
     margin-left: 16px;
     cursor: pointer;
+    text-align: center;
 }
 //* USER
-.user-btn {
-    font-size: 22px;
-    min-height: 32px;
-    min-width: 32px;
+.social-icon {
     background-color: transparent;
-    color: var(--button-color);
+    color: var(--input-color);
     margin-right: 16px;
     cursor: pointer;
+}
+.message-icon {
+    padding: 3px 3px 0px;
 }
 .user-avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin-right: 12px;
+    margin-left: 8px;
     cursor: pointer;
 }

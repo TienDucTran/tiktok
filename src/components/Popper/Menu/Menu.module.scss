@@ -7,7 +7,9 @@
 }
 //MenuItem
 .menu-item {
-    color: var(--button-color);
+    display: flex;
+    align-items: center;
+    color: var(--input-color);
     width: 100%;
     min-height: 42px;
     text-align: left;
