@@ -22,92 +22,7 @@
     height: 42px;
     cursor: pointer;
 }
-.search,
-.search-result {
-    width: 361px;
-}
-.search-popper {
-    margin-top: 8px;
-    padding: 8px 8px 0 0;
-    overflow-y: scroll;
-}
-.search {
-    position: relative;
-    height: var(--search-height);
-    padding: 0 16px;
-    background-color: #1618230f;
-    border-radius: var(--search-boder-radius);
-    border: 1.5px solid transparent;
-    display: flex;
-    align-items: center;
-
-    input {
-        flex: 1;
-        font-size: 1.6rem;
-        height: 70%;
-        caret-color: var(--primary);
-        padding: 0;
-        color: var(--input-color);
-        background-color: transparent;
-    }
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: var(--button-color);
-    }
-    input:not(:placeholder-shown) ~ .clear {
-        display: block;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
-        width: 1px;
-        background-color: var(--border-color);
-        top: var(--search-top-spacer);
-        right: var(--search-button-width);
-    }
-    &:focus-within {
-        border-color: #c5c6c9;
-    }
-}
-
-.search-title {
-    padding: 5px 12px;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #16182380;
-}
-.clear,
-.loading {
-    font-size: 1.6rem;
-    color: var(--search-color);
-    position: absolute;
-    right: calc(var(--search-button-width) + 16px);
-    top: 50%;
-    transform: translateY(-50%);
-    display: none;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-.search-btn {
-    width: var(--search-button-width);
-    height: 100%;
-    font-size: 2rem;
-    color: var(--search-color);
-    margin-right: -16px;
-    border-top-right-radius: var(--search-boder-radius);
-    border-bottom-right-radius: var(--search-boder-radius);
-
-    &:hover {
-        background: rgba(22, 24, 35, 0.03);
-        cursor: pointer;
-    }
-    &:active {
-        background: rgba(22, 24, 35, 0.06);
-    }
-}
+//!SEARCH => CPM Search
 .actions {
     display: flex;
     align-items: center;
@@ -124,7 +39,8 @@
     text-align: center;
 }
 //* USER
-.social-icon {
+.action-btn {
+    position: relative;
     background-color: transparent;
     color: var(--input-color);
     margin-right: 16px;
@@ -132,6 +48,20 @@
 }
 .message-icon {
     padding: 3px 3px 0px;
+}
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    padding: 0px 6px;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+    font-family: 'ProximaNova', sans-serif;
+    background-color: var(--primary);
 }
 .user-avatar {
     width: 32px;

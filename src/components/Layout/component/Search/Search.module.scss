@@ -1,0 +1,107 @@
+.search,
+.search-result {
+    width: 361px;
+}
+.search-popper {
+    margin-top: 8px;
+    padding: 8px 8px 0 0;
+    overflow-y: scroll;
+}
+.search {
+    position: relative;
+    height: var(--search-height);
+    padding: 0 16px;
+    background-color: #1618230f;
+    border-radius: var(--search-boder-radius);
+    border: 1.5px solid transparent;
+    display: flex;
+    align-items: center;
+
+    input {
+        flex: 1;
+        font-size: 1.6rem;
+        height: 70%;
+        caret-color: var(--primary);
+        padding: 0;
+        color: var(--input-color);
+        background-color: transparent;
+    }
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: var(--button-color);
+    }
+    input:not(:placeholder-shown) ~ .close {
+        display: flex;
+    }
+    input:not(:placeholder-shown) ~ .loading {
+        display: flex;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        width: 1px;
+        background-color: var(--border-color);
+        top: var(--search-top-spacer);
+        right: var(--search-button-width);
+    }
+    &:focus-within {
+        border-color: #c5c6c9;
+    }
+}
+
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #16182380;
+}
+.close,
+.loading {
+    font-size: 1.6rem;
+    margin: 0px 12px;
+    color: var(--search-color);
+    position: absolute;
+    right: calc(var(--search-button-width));
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.loading {
+    top: 13px;
+    animation: 1s linear 0s infinite normal none running loading-circle-anim;
+
+    @keyframes loading-circle-anim {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    font-size: 2rem;
+    color: var(--search-color);
+    margin-right: -16px;
+    padding: 4px 16px 0 12px;
+    border-top-right-radius: var(--search-boder-radius);
+    border-bottom-right-radius: var(--search-boder-radius);
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+    &:active {
+        background: rgba(22, 24, 35, 0.06);
+    }
+}
