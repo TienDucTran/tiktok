@@ -73,16 +73,14 @@
 }
 
 .loading {
-    top: 13px;
     animation: 1s linear 0s infinite normal none running loading-circle-anim;
-
     @keyframes loading-circle-anim {
         0% {
-            transform: rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
         }
 
         100% {
-            transform: rotate(360deg);
+            transform: translateY(-50%) rotate(360deg);
         }
     }
 }

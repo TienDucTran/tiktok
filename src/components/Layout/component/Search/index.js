@@ -13,14 +13,29 @@ function Search() {
     const [searchValue, setSearchValue] = useState('')
     const [searchResult, setSearchResult] = useState([])
     const [showResult, setShowResult] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const inputRef = useRef()
 
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1])
-        }, 0)
-    }, [])
+        if (!searchValue.trim()) {
+            setSearchResult([])
+            return
+        }
+        setLoading(true)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            .then(res => res.json())
+            .then(res => {
+                setSearchResult(res.data);
+                setLoading(false)
+            })
+            .catch(() => {
+                setTimeout(() => {
+                    alert('vl')
+                }, 300)
+            })
+
+    }, [searchValue])
 
     const handleClear = () => {
         setSearchValue('')
@@ -29,6 +44,7 @@ function Search() {
     }
     const handleHideResult = () => {
         setShowResult(false)
+
 
     }
     return (
@@ -41,10 +57,9 @@ function Search() {
                         <h4 className={cx('search-title')}>
                             Accounts
                         </h4>
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        {searchResult.map(result => (
+                            <AccountItem key={result.id} data={result} />
+                        ))}
                     </PopperWrapper>
                 </div>
             )}
@@ -58,11 +73,10 @@ function Search() {
                     spellCheck={false}
                     onChange={e => {
                         setSearchValue(e.target.value)
-                        setSearchResult([1])
                     }}
                     onFocus={() => setShowResult(true)}
                 />
-                {!!setSearchValue && (
+                {!!setSearchValue && !loading && (
                     <button
                         className={cx('close')}
                         onClick={handleClear}>
@@ -70,7 +84,7 @@ function Search() {
                     </button>
                 )}
 
-                {/* <LoadingIcon className={cx('loading')} /> */}
+                {loading && <LoadingIcon className={cx('loading')} />}
 
                 <button className={cx('search-btn')}>
                     <SearchIcon />
