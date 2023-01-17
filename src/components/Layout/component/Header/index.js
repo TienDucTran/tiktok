@@ -12,6 +12,8 @@ import { CameraIcon, FeedbackIcon, InboxIcon, KeyboadIcon, LanguageIcon, LogoutI
 import Inbox from '~/components/Popper/Inbox';
 import Image from '~/components/Image';
 import Search from '~/components/Layout/component/Search';
+import routesConfig from '~/config/routes'
+
 
 const cx = classNames.bind(styles)
 const MENU_ITEMS = [
@@ -68,7 +70,7 @@ function Header() {
         {
             icon: <PersonIcon />,
             title: 'View profile',
-            to: '/@tienducne'
+            to: '/@/tienducne'
         },
         {
             icon: <TiktokIcon />,
@@ -94,7 +96,7 @@ function Header() {
 
     return <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-            <Link to='/' className={cx('logo')}>
+            <Link to={routesConfig.home} className={cx('logo')}>
                 <img src={images.logo} alt="Tiktok" />
             </Link>
 

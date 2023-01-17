@@ -37,14 +37,21 @@ function Search() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debounced])
 
+    const handleChange = (e) => {
+        const searchValue = e.target.value
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue)
+        }
+    }
+
     const handleClear = () => {
         setSearchValue('')
         setSearchResult([])
         inputRef.current.focus()
     }
+
     const handleHideResult = () => {
         setShowResult(false)
-
 
     }
     return (
@@ -71,9 +78,7 @@ function Search() {
                     value={searchValue}
                     placeholder='Search accounts and videos'
                     spellCheck={false}
-                    onChange={e => {
-                        setSearchValue(e.target.value)
-                    }}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!setSearchValue && !loading && (
@@ -86,7 +91,7 @@ function Search() {
 
                 {loading && <LoadingIcon className={cx('loading')} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>
