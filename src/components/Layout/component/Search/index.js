@@ -55,47 +55,50 @@ function Search() {
 
     }
     return (
-        <HeadlessTippy
-            interactive
-            visible={searchResult.length && showResult}
-            render={attrs => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('search-popper')}>
-                        <h4 className={cx('search-title')}>
-                            Accounts
-                        </h4>
-                        {searchResult.map(result => (
-                            <AccountItem key={result.id} data={result} />
-                        ))}
-                    </PopperWrapper>
-                </div>
-            )}
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    value={searchValue}
-                    placeholder='Search accounts and videos'
-                    spellCheck={false}
-                    onChange={handleChange}
-                    onFocus={() => setShowResult(true)}
-                />
-                {!!setSearchValue && !loading && (
-                    <button
-                        className={cx('close')}
-                        onClick={handleClear}>
-                        <CloseIcon />
-                    </button>
+        //! Warning tippy -> using <div> tag to prevent report warning
+        <div>
+            <HeadlessTippy
+                interactive
+                visible={searchResult.length && showResult}
+                render={attrs => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper className={cx('search-popper')}>
+                            <h4 className={cx('search-title')}>
+                                Accounts
+                            </h4>
+                            {searchResult.map(result => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                        </PopperWrapper>
+                    </div>
                 )}
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        value={searchValue}
+                        placeholder='Search accounts and videos'
+                        spellCheck={false}
+                        onChange={handleChange}
+                        onFocus={() => setShowResult(true)}
+                    />
+                    {!!setSearchValue && !loading && (
+                        <button
+                            className={cx('close')}
+                            onClick={handleClear}>
+                            <CloseIcon />
+                        </button>
+                    )}
 
-                {loading && <LoadingIcon className={cx('loading')} />}
+                    {loading && <LoadingIcon className={cx('loading')} />}
 
-                <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
-                    <SearchIcon />
-                </button>
-            </div>
-        </HeadlessTippy>
+                    <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
+                        <SearchIcon />
+                    </button>
+                </div>
+            </HeadlessTippy>
+        </div>
     );
 }
 
