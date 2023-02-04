@@ -1,16 +1,23 @@
-import { DefaultLayout, HeaderOnly } from '~/components/Layout';
+// Layouts
+import { DefaultLayout, HeaderOnly } from '~/layouts';
+
+// Pages
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
-import routesConfig from '~/config/routes'
-export const puclicRoutes = [
-    { path: routesConfig.home, component: Home, layout: DefaultLayout },
-    { path: routesConfig.following, component: Following, layout: DefaultLayout },
-    { path: routesConfig.profile, component: Profile, layout: DefaultLayout },
-    { path: routesConfig.upload, component: Upload, layout: HeaderOnly },
-    { path: routesConfig.search, component: Search },
+
+// config
+import config from '~/config';
+
+//Public routes
+export const publicRoutes = [
+    { path: config.routes.home, component: Home, layout: DefaultLayout },
+    { path: config.routes.following, component: Following, layout: DefaultLayout },
+    { path: config.routes.profile, component: Profile, layout: DefaultLayout },
+    { path: config.routes.upload, component: Upload, layout: HeaderOnly },
+    { path: config.routes.search, component: Search },
 ]
 export const privateRoutes = [
 

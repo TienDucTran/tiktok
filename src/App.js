@@ -1,13 +1,13 @@
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { puclicRoutes } from '~/routes'
+import { publicRoutes } from '~/routes'
 function App() {
 
     return (
         <Router>
             <div className="App">
                 <Routes>
-                    {puclicRoutes.map((route, index) => {
+                    {publicRoutes.map((route, index) => {
                         const Layout = route.layout ? route.layout : Fragment
                         const Page = route.component
                         return < Route
