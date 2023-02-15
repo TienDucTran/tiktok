@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react';
 // import classNames from 'classnames/bind';
 
@@ -27,6 +27,9 @@ function Inbox({ children }) {
             {children}
         </Tippy>
     )
+}
+Inbox.propTypes = {
+    children: PropTypes.string
 }
 export default Inbox
 
