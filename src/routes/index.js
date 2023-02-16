@@ -7,6 +7,7 @@ import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
+import Live from '~/pages/Live'
 
 // config
 import config from '~/config';
@@ -18,6 +19,7 @@ export const publicRoutes = [
     { path: config.routes.profile, component: Profile, layout: DefaultLayout },
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.routes.search, component: Search },
+    { path: config.routes.live, component: Live, layout: DefaultLayout },
 ]
 export const privateRoutes = [
 

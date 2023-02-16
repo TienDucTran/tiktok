@@ -18,7 +18,8 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
-    padding: 0px var(--default-layout-horizontal-spacer);
+    padding: 0 var(--default-layout-horizontal-spacer) 0
+        calc(var(--default-layout-horizontal-spacer) - 4px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,6 +27,7 @@
 .logo {
     height: 42px;
     cursor: pointer;
+    margin-right: 183px;
 }
 //!SEARCH => CPM Search
 .actions {
