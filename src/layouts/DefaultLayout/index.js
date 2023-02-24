@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import classNames from "classnames/bind";
 import Header from "~/layouts/component/Header";
 import PropTypes from 'prop-types';
@@ -9,7 +10,13 @@ function DefaultLayout({ children }) {
     return (<div className={cx('wrapper')}>
         <Header />
         <div className={cx('container')}>
-            <Sidebar />
+            {/* <div className={cx('mask')}></div> */}
+            <div className={cx('nav-container')}>
+                <div className={cx('scroll-container')}>
+                    <Sidebar />
+                </div>
+            </div>
+
             <div className={cx('content')} >
                 {children}
             </div>

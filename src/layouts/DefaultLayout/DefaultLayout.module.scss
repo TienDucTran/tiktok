@@ -11,6 +11,33 @@
     padding: 0 var(--default-layout-horizontal-spacer) 0
         calc(var(--default-layout-horizontal-spacer) - 4px);
 }
+
+.nav-container {
+    position: relative;
+    width: 356px;
+    margin-left: -20px;
+}
+.scroll-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    top: 60px;
+    bottom: 0;
+    width: 356px;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+    &::-webkit-scrollbar {
+        display: none; /* Ẩn thanh cuộn bằng mặc định */
+    }
+    &:hover::-webkit-scrollbar {
+        display: block; /* Hiển thị thanh cuộn khi người dùng di chuột qua */
+    }
+}
 .content {
     flex: 1;
 }

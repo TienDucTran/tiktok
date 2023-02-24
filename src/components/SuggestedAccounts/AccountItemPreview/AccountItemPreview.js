@@ -23,7 +23,7 @@ function AccountItemPreview({ data }) {
             </Link >
             <Link to={`/@/${data.nickname}`} className={cx('username')}>{data.full_name}</Link>
             <p className={cx('footer')}>
-                <span className={cx('user-count')}>{data.followers_count}M</span>
+                <span className={cx('user-count')}>{data.followers_count}</span>
                 <span className={cx('user-like')}>Follwers</span>
                 <span className={cx('user-count')}>{data.likes_count}M</span>
                 <span className={cx('user-like')}>Likes</span>

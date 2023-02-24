@@ -27,7 +27,7 @@ function Search() {
         }
         const fetchApi = async () => {
             setLoading(true)
-            const result = await searchServices.search(debounced)
+            const result = await searchServices.getSearch(debounced)
             setSearchResult(result)
             setLoading(false)
 

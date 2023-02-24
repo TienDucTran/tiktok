@@ -11,7 +11,6 @@ import AccountItemPreview from './AccountItemPreview';
 const cx = classNames.bind(styles)
 
 function AccountItem({ data }) {
-
     return (
         <div>
             <Tippy
@@ -42,4 +41,4 @@ function AccountItem({ data }) {
 AccountItem.propTypes = {
     data: PropTypes.object.isRequired
 }
-export default AccountItem;
+export default (AccountItem);
