@@ -8,6 +8,7 @@ import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Live from '~/pages/Live'
+import Register from '~/pages/Register'
 
 // config
 import config from '~/config';
@@ -20,6 +21,7 @@ export const publicRoutes = [
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },
     { path: config.routes.search, component: Search },
     { path: config.routes.live, component: Live, layout: DefaultLayout },
+    { path: config.routes.register, component: Register, layout: DefaultLayout },
 ]
 export const privateRoutes = [
 
