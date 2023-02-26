@@ -61,6 +61,8 @@
     }
 }
 .outline {
+    min-width: 88px;
+    padding: 2px 0;
     color: var(--primary);
     border-color: currentColor;
 

@@ -1,0 +1,148 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 0;
+    position: relative;
+    max-width: 692px;
+    &::after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        bottom: 0;
+        right: 8px;
+        left: 8px;
+        background: rgba(22, 24, 35, 0.12);
+    }
+}
+
+.content {
+    margin-left: 12px;
+    width: 624px;
+    flex: 1 1 624px;
+}
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+.info {
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover .nick-name {
+        text-decoration: underline;
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        display: inline-block;
+        margin-right: 4px;
+    }
+    h4 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+        line-height: 28px;
+    }
+}
+.btn {
+    right: 0;
+    position: absolute;
+    top: 28px;
+}
+
+.header {
+    margin-right: 114px;
+}
+.description {
+    font-size: 16px;
+    line-height: 22px;
+    span {
+        display: inline;
+        font-weight: 400;
+    }
+    .description-link {
+        display: inline-block;
+        font-weight: 600;
+        color: #161823;
+    }
+}
+.description-link:hover {
+    text-decoration: underline;
+}
+// .place {
+// }
+.music {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.footer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.video {
+    width: 280px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+
+    .icon-flag {
+        display: flex;
+        margin-right: 4px;
+        position: absolute;
+        right: 16px;
+        top: 24px;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+    .icon-pause,
+    .icon-use {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        transition: opacity 0.3s;
+        opacity: 0;
+        bottom: 26px;
+    }
+    .icon-sound {
+        position: absolute;
+        bottom: 26px;
+        right: 12px;
+        padding: 8px;
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        transition: opacity 0.3s ease 0s;
+    }
+
+    &:hover div {
+        opacity: 1;
+    }
+    &:hover p {
+        opacity: 1;
+    }
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+}
