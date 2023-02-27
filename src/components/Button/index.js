@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import styles from './Button.module.scss'
+import Theme from "~/layouts/component/Theme";
 
 const cx = classNames.bind(styles)
 
@@ -17,6 +18,7 @@ function Button({ to,
     large = false,
     circle,
     icon,
+    theme = false,
     className,
     onClick,
     ...passProps }) {
@@ -56,6 +58,7 @@ function Button({ to,
         <Comp className={classes} {...props}>
             {icon && <span className={cx('icon')}>{icon}</span>}
             <span >{children}</span>
+            {theme && <Theme />}
         </Comp>
     );
 }

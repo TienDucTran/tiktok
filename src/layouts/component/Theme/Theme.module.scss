@@ -1,0 +1,55 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 24px;
+    width: 44px;
+    color: rgba(22, 24, 35, 0.12);
+    border-radius: 50px;
+    background: #e4e4e4;
+    cursor: pointer;
+    transition: 0.1s background ease-out;
+    margin-left: 47px;
+    &:hover {
+        background-color: #16182329;
+    }
+    &.dark {
+        background-color: #0be09b;
+    }
+}
+.btn-change {
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dark .btn-change {
+    animation: toggleOn 0.2s ease-out forwards;
+}
+
+.light .btn-change {
+    animation: toggleOff 0.2s ease-out forwards;
+}
+
+@keyframes toggleOn {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: calc(100% - 20px);
+    }
+}
+
+@keyframes toggleOff {
+    0% {
+        left: calc(100% - 20px);
+    }
+    100% {
+        left: 0px;
+    }
+}

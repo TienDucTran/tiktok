@@ -9,7 +9,7 @@ function MenuItem({ key, data, onClick }) {
     })
 
     return (
-        <Button className={className} key={key} to={data.to} href={data.href} icon={data.icon} onClick={onClick} >
+        <Button className={className} key={key} to={data.to} href={data.href} icon={data.icon} theme={data.theme} onClick={onClick} >
             {data.title}
         </Button>
     );

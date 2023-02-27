@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles)
 const defaultFn = () => { }
+
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }])
     const currentMenu = history[history.length - 1] //* vào lớp thứ 2

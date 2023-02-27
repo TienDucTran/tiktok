@@ -49,6 +49,7 @@ const MENU_ITEMS = [
     {
         icon: <ThemeIcon />,
         title: 'Dark mode ',
+        theme: true
 
     },
 ]
