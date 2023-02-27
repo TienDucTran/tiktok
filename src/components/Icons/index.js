@@ -1,7 +1,7 @@
 import './Icons.css'
 
 //*Tick blue
-export const TickIcon = ({ width = '1.4rem', height = '1.4rem', className }) => (
+export const TickIcon = ({ width = '1.7rem', height = '1.7rem', className }) => (
     <svg className={className}
         width={width} data-e2e=""
         height={height} viewBox="0 0 48 48"

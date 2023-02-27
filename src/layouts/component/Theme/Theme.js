@@ -1,22 +1,15 @@
 import classNames from "classnames/bind";
-import { useState } from "react";
+import { useContext } from "react";
+
 import styles from "./Theme.module.scss"
+import { ThemeContext } from "~/context";
 
 const cx = classNames.bind(styles)
 function Theme() {
-    const [theme, setTheme] = useState('')
-    const handleClick = () => {
-        if (theme === "dark") {
-            // i18n.changeLanguage('en')
-            setTheme("light")
-        } else {
-            // i18n.changeLanguage('vn')
-            setTheme("dark")
-        }
-    }
+    const value = useContext(ThemeContext)
     return (
-        <label className={cx('wrapper', theme)}>
-            <button onClick={handleClick} className={cx('btn-change')}>
+        <label className={cx('wrapper', value.theme)}>
+            <button onClick={value.handleClick} className={cx('btn-change')}>
 
             </button>
         </label>
