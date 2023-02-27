@@ -1,0 +1,18 @@
+.wrapper {
+    position: relative;
+    padding: 20px 8px 24px 8px;
+    &::before {
+        position: absolute;
+        content: '';
+        height: 1px;
+        top: 0;
+        right: 8px;
+        left: 8px;
+        background: rgba(22, 24, 35, 0.12);
+    }
+}
+.description {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 16px;
+    line-height: 22px;
+}

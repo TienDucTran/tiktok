@@ -1,13 +1,13 @@
 .wrapper {
     min-width: 100px;
+    background-color: var(--white);
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 1.6rem;
     line-height: 2.2rem;
     border-radius: 4px;
-    cursor: pointer;
-    background-color: var(--white);
     border: 1px solid transparent;
+    cursor: pointer;
     user-select: none;
 
     &.disable {
@@ -98,7 +98,9 @@
 .large {
     font-size: 18px;
     width: 100%;
+    font-weight: 700;
     min-height: 48px;
     min-width: 168px;
     padding: 6px 8px;
+    margin-top: 20px;
 }
