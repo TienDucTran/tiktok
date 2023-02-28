@@ -1,9 +1,14 @@
 import classNames from "classnames/bind";
 import PropTypes from 'prop-types';
 import { useEffect, useState, useCallback } from 'react';
-import AccountItem from "./AccountItem";
+import { Link } from 'react-router-dom';
+
+import AccountItems from "./AccountItems";
 import styles from './SuggestedAccounts.module.scss'
 import * as userService from '~/services/userService'
+import Image from '~/components/Image';
+import { TickIcon } from '~/components/Icons';
+
 // import * as followingService from '~/services/followingService'
 
 const cx = classNames.bind(styles)
@@ -50,8 +55,19 @@ function SuggestedAccounts({ label }) {
     return (
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
-            {suggested.map(result => (
-                <AccountItem key={result.id} data={result} />
+            {suggested.map(data => (
+                <AccountItems key={data.id} data={data} >
+                    <Link to={`/@/${data.nickname}`} className={cx('account-item')} >
+                        <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
+                        <div className={cx('info')}>
+                            <p className={cx('name')}>
+                                <span>{data.nickname}</span>
+                                {data.tick && <TickIcon className={cx('tick-blue')} />}
+                            </p>
+                            <span className={cx('username')}>{data.full_name}</span>
+                        </div>
+                    </Link>
+                </AccountItems >
             ))}
             {showExtraItems ? (
                 <button className={cx('more-btn')} onClick={handleClickLess}>See less</button>

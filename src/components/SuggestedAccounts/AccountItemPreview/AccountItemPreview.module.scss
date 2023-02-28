@@ -1,5 +1,6 @@
 .wrapper {
     width: 320px;
+    height: 100%;
     padding: 20px;
     position: relative;
 }
@@ -52,4 +53,11 @@
     &:not(:last-of-type) {
         margin-right: 12px;
     }
+}
+.profile {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

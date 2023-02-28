@@ -9,6 +9,7 @@ import { PauseIcon, ReportIcon, SoundIcon, TickIcon, UseIcon, ShareIcon, Comment
 import EditVideo from "./EditVideo";
 import { useEffect, useRef, useState } from "react";
 import ActionItem from "./ActionItem";
+import AccountItems from "../SuggestedAccounts/AccountItems";
 const cx = classNames.bind(styles)
 
 function VideoItem({ data }) {
@@ -31,17 +32,21 @@ function VideoItem({ data }) {
 
     return (
         <div className={cx('wrapper')}>
-            <Link to={`/@/${data.user.nickname}`} >
-                <Image className={cx('avatar')} src={data.user.avatar} alt={data.user.full_name} />
-            </Link>
+            <AccountItems data={data} profile>
+                <Link to={`/@/${data.user.nickname}`} className={cx('avatar')}>
+                    <Image className={cx('avatar-img')} src={data.user.avatar} alt={data.user.full_name} />
+                </Link>
+            </AccountItems>
             <div className={cx('content')} >
                 <div className={cx('header')}>
                     <div className={cx('info')}>
-                        <Link to={`/@/${data.user.nickname}`}>
-                            <h3 className={cx('nick-name')}>{data.user.nickname}</h3>
-                            {data.user.tick && <TickIcon className={cx('tick-blue')} />}
-                            <h4>{data.user.first_name} {data.user.last_name}</h4>
-                        </Link>
+                        <AccountItems data={data} profile>
+                            <Link to={`/@/${data.user.nickname}`} className={cx('info-link')}>
+                                <h3 className={cx('nick-name')}>{data.user.nickname}</h3>
+                                {data.user.tick && <TickIcon className={cx('tick-blue')} />}
+                                <h4>{data.user.first_name} {data.user.last_name}</h4>
+                            </Link>
+                        </AccountItems>
                     </div>
 
                     <Button outline className={cx('btn')}>Follow</Button>

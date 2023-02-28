@@ -21,7 +21,7 @@
     width: 624px;
     flex: 1 1 624px;
 }
-.avatar {
+.avatar-img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -29,12 +29,9 @@
 .info {
     height: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: left;
 
-    &:hover .nick-name {
-        text-decoration: underline;
-    }
     h3 {
         font-weight: 700;
         font-size: 18px;
@@ -50,6 +47,11 @@
         line-height: 28px;
     }
 }
+
+.info-link:hover .nick-name {
+    text-decoration: underline;
+}
+
 .btn {
     right: 0;
     position: absolute;

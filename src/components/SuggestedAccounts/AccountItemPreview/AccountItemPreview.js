@@ -10,28 +10,37 @@ import Button from '~/components/Button';
 
 const cx = classNames.bind(styles)
 
-function AccountItemPreview({ data }) {
+function AccountItemPreview({ data, profile = false }) {
     return (
         <PopperWrapper className={cx('wrapper')}>
             <div className={cx('header')}>
-                <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
-                <Button primary>Follow</Button>
+                <Image className={cx('avatar')} src={profile ? data.user.avatar : data.avatar} alt={profile ? data.user.full_name : data.full_name} />
+                {profile
+                    ? <Button outline medium>Follow</Button>
+                    : <Button primary>Follow</Button>
+                }
             </div>
-            <Link to={`/@/${data.nickname}`} >
-                <span className={cx('name')}>{data.nickname}</span>
-                {data.tick && <TickIcon className={cx('tick-blue')} />}
+            <Link to={`/@/${profile ? data.user.nickname : data.nickname}`} >
+                <span className={cx('name')}>{profile ? data.user.nickname : data.nickname}</span>
+                {profile ? data.user.tick : data.tick && <TickIcon className={cx('tick-blue')} />}
             </Link >
-            <Link to={`/@/${data.nickname}`} className={cx('username')}>{data.full_name}</Link>
+            <Link to={`/@/${profile ? data.user.nickname : data.nickname}`} className={cx('username')}>{profile ? data.user.full_name : data.full_name}</Link>
             <p className={cx('footer')}>
-                <span className={cx('user-count')}>{data.followers_count}</span>
+                <span className={cx('user-count')}>{profile ? data.user.followers_count : data.followers_count}</span>
                 <span className={cx('user-like')}>Follwers</span>
-                <span className={cx('user-count')}>{data.likes_count}M</span>
+                <span className={cx('user-count')}>{profile ? data.user.likes_count : data.likes_count}M</span>
                 <span className={cx('user-like')}>Likes</span>
             </p>
+            {profile &&
+                <p className={cx('profile')}>
+                    {data.user.bio}
+                </p>}
+
         </PopperWrapper>
     );
 }
 AccountItemPreview.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    profile: PropTypes.bool
 }
 export default AccountItemPreview;
