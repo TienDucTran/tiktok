@@ -8,6 +8,7 @@ import { useContext } from "react";
 import styles from './DefaultLayout.module.scss'
 import Sidebar from "~/layouts/component/Sidebar";
 import { ThemeContext } from "~/context";
+import DownloadApp from "~/layouts/component/DownloadApp";
 
 const cx = classNames.bind(styles)
 
@@ -29,6 +30,7 @@ function DefaultLayout({ children }) {
                     {children}
                 </div>
             </div>
+            <DownloadApp />
         </div>)
 }
 DefaultLayout.propTypes = {

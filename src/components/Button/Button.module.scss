@@ -1,6 +1,8 @@
 .wrapper {
+    display: flex;
+    align-items: center;
     min-width: 100px;
-    background-color: var(--white);
+    background-color: transparent;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 1.6rem;
@@ -21,13 +23,6 @@
     margin-right: 8px;
 }
 //* làm riêng cho nút tua lên
-// .icon {
-//     font-size: 18px;
-//     position: absolute;
-//     right: 6px;
-//     top: 50%;
-//     transform: translateY(-45%);
-// }
 
 .primary {
     display: inline-flex;
@@ -61,6 +56,7 @@
     }
 }
 .outline {
+    justify-content: center;
     min-width: 88px;
     padding: 2px 0;
     color: var(--primary);
@@ -71,6 +67,7 @@
     }
 }
 .rounded {
+    justify-content: center;
     min-width: 90px;
     padding: 4px 8px;
     color: var(--button-color);
