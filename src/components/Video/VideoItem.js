@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './Video.module.scss'
 import Button from "~/components/Button";
 import Image from "~/components/Image";
-import { PauseIcon, ReportIcon, SoundIcon, TickIcon, UseIcon, ShareIcon, CommentIcon, LikeIcon } from "~/components/Icons";
+import { PauseIcon, ReportIcon, SoundIcon, TickIcon, UseIcon, ShareIcon, CommentIcon, LikeIcon, MuteSoundIcon, MusicIcon } from "~/components/Icons";
 import EditVideo from "./EditVideo";
 import { useEffect, useRef, useState } from "react";
 import ActionItem from "./ActionItem";
@@ -13,22 +13,37 @@ import AccountItems from "../SuggestedAccounts/AccountItems";
 const cx = classNames.bind(styles)
 
 function VideoItem({ data }) {
-    const place = true
+    const place = false
     const videoRef = useRef()
-
-    const [use, setUse] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(true)
+    const [volume, setVolume] = useState(0.5);
 
     useEffect(() => {
-        console.log(videoRef);
+        // videoRef.current.volume = volume
+        // console.log(videoRef.current.volume);
+        // console.log(videoRef.current);
 
     })
 
-    const handlePlay = () => {
-        videoRef.current.play()
+    useEffect(() => {
+        videoRef.current.volume = volume
+        console.log(videoRef.current.volume);
+
+    }, [volume])
+
+    const handleVolumeChange = (event) => {
+        setVolume(event.target.value / 100);
     }
-    const handlePause = () => {
-        videoRef.current.pause()
+
+    const handleClick = () => {
+        if (isPlaying) {
+            videoRef.current.pause()
+        } else {
+            videoRef.current.play()
+        }
+        setIsPlaying(!isPlaying)
     }
+
 
     return (
         <div className={cx('wrapper')}>
@@ -56,9 +71,9 @@ function VideoItem({ data }) {
                         <Link className={cx('description-link')}>#Tag conbo#xuhuong</Link>
                     </div>
 
-                    {place ? <div className={cx('place')}>Place</div> : <></>}
+                    {place && <div className={cx('place')}>Place</div>}
 
-                    <Link className={cx('music')}>Music</Link>
+                    <Link className={cx('music')}><MusicIcon className={cx('mr4')} /> {data.music}</Link>
                 </div>
 
                 <div className={cx('footer')}>
@@ -66,11 +81,25 @@ function VideoItem({ data }) {
                     <div className={cx('video')}>
                         <EditVideo data={data} ref={videoRef} />
                         <p className={cx('icon-flag')}><ReportIcon className={cx('mr4')} />Report</p>
-                        {use ? <div onClick={handlePlay} className={cx('icon-use')}><UseIcon /></div> :
-                            <div onClick={handlePause} className={cx('icon-pause')}><PauseIcon /></div>
-                        }
+                        <button onClick={handleClick} className={cx('icon-handle')}>{isPlaying ? <PauseIcon /> : <UseIcon />}</button>
 
-                        <div className={cx('icon-sound')}><SoundIcon /></div>
+                        <div className={cx('volume-container')}>
+                            <div className={cx('volume-control')}>
+                                <div className={cx('volume-background')}>
+                                    <div className={cx('volume-bar')}>
+                                        <div className={cx('volume-dot')}>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <input className={cx('volume-range')} type="range" value={volume} onChange={handleVolumeChange} />
+                            </div>
+                            <button className={cx('icon-sound')} onClick={handleClick}>
+                                {isPlaying ? <SoundIcon />
+                                    : <MuteSoundIcon />}
+                            </button>
+
+                        </div>
                     </div>
 
                     <div className={cx('action-item')}>
@@ -94,4 +123,5 @@ function VideoItem({ data }) {
 PropTypes.propTypes = {
     data: PropTypes.object.isRequired
 }
+
 export default VideoItem;

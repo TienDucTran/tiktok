@@ -113,35 +113,107 @@
         transition: opacity 0.3s;
         opacity: 0;
     }
-    .icon-pause,
-    .icon-use {
+    .icon-handle {
         position: absolute;
         left: 12px;
-        bottom: 12px;
+        bottom: 26px;
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        color: var(--white);
         padding: 10px;
-        width: 40px;
-        height: 40px;
         transition: opacity 0.3s;
-        opacity: 0;
-        bottom: 26px;
-    }
-    .icon-sound {
-        position: absolute;
-        bottom: 26px;
-        right: 12px;
-        padding: 8px;
-        opacity: 0;
-        width: 40px;
-        height: 40px;
-        transition: opacity 0.3s ease 0s;
+        cursor: pointer;
     }
 
-    &:hover div {
+    &:hover button {
         opacity: 1;
     }
     &:hover p {
         opacity: 1;
     }
+}
+
+.volume-container {
+    align-items: center;
+    bottom: 24px;
+    display: flex;
+    position: absolute;
+    right: 12px;
+    transform: rotate(90deg);
+    transform-origin: calc(100% - 20px);
+    transition: opacity 0.3s;
+    z-index: 2;
+
+    .volume-control {
+        height: 24px;
+        display: none;
+        position: relative;
+        align-items: center;
+        width: 64px;
+        background-color: #16182357;
+        border-radius: 32px;
+        padding: 0 8px;
+        transform: rotate(180deg);
+        cursor: pointer;
+
+        * {
+            cursor: pointer;
+        }
+        //!
+        .volume-background {
+            background-color: hsla(0, 0%, 100%, 0.34);
+            border-radius: 100px;
+            height: 2px;
+            position: relative;
+            width: 100%;
+        }
+
+        .volume-bar {
+            background-color: #fff;
+            border-radius: inherit;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+        .volume-range {
+            height: 2px;
+            left: 8px;
+            opacity: 1;
+            position: absolute;
+            right: 8px;
+        }
+    }
+
+    .icon-sound {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        color: var(--white);
+        padding: 8px;
+        transition: opacity 0.3s ease 0s;
+        transform: rotate(-90deg);
+        opacity: 0;
+        cursor: pointer;
+    }
+    &:hover .volume-control {
+        display: flex;
+    }
+}
+
+.volume-control .volume-bar .volume-dot {
+    background-color: inherit;
+    border-radius: 50%;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+    width: 12px;
 }
 
 .action-item {
