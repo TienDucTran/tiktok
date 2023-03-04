@@ -16,13 +16,13 @@ function VideoItem({ data }) {
     const place = false
     const videoRef = useRef()
     const [isPlaying, setIsPlaying] = useState(true)
+    const [isMuted, setIsMuted] = useState(true)
     const [volume, setVolume] = useState(0.5);
 
     useEffect(() => {
         // videoRef.current.volume = volume
         // console.log(videoRef.current.volume);
         // console.log(videoRef.current);
-
     })
 
     useEffect(() => {
@@ -42,6 +42,11 @@ function VideoItem({ data }) {
             videoRef.current.play()
         }
         setIsPlaying(!isPlaying)
+    }
+
+    const handleClickSound = () => {
+
+        setIsMuted(!isMuted)
     }
 
 
@@ -64,16 +69,16 @@ function VideoItem({ data }) {
                         </AccountItems>
                     </div>
 
-                    <Button outline className={cx('btn')}>Follow</Button>
+                    <Button outline className={cx('header-btn-following')}>Follow</Button>
 
-                    <div className={cx('description')}>
+                    <div className={cx('header-description')}>
                         <span>{data.description}</span>
                         <Link className={cx('description-link')}>#Tag conbo#xuhuong</Link>
                     </div>
 
-                    {place && <div className={cx('place')}>Place</div>}
+                    {place && <div className={cx('header-place')}>Place</div>}
 
-                    <Link className={cx('music')}><MusicIcon className={cx('mr4')} /> {data.music}</Link>
+                    <Link className={cx('header-music')}><MusicIcon className={cx('mr4')} /> {data.music || `nhạc nền - ${data.user.first_name} ${data.user.last_name}`}</Link>
                 </div>
 
                 <div className={cx('footer')}>
@@ -94,9 +99,9 @@ function VideoItem({ data }) {
                                 </div>
                                 <input className={cx('volume-range')} type="range" value={volume} onChange={handleVolumeChange} />
                             </div>
-                            <button className={cx('icon-sound')} onClick={handleClick}>
-                                {isPlaying ? <SoundIcon />
-                                    : <MuteSoundIcon />}
+                            <button className={cx('icon-sound')} onClick={handleClickSound}>
+                                {isMuted ? <MuteSoundIcon />
+                                    : <SoundIcon />}
                             </button>
 
                         </div>

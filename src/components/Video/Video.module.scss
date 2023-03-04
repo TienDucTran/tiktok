@@ -52,7 +52,7 @@
     text-decoration: underline;
 }
 
-.btn {
+.header-btn-following {
     right: 0;
     position: absolute;
     top: 28px;
@@ -61,7 +61,7 @@
 .header {
     margin-right: 114px;
 }
-.description {
+.header-description {
     font-size: 16px;
     line-height: 22px;
     span {
@@ -77,9 +77,10 @@
 .description-link:hover {
     text-decoration: underline;
 }
-// .place {
+// .header-place {
 // }
-.music {
+.header-music {
+    color: var(--input-color);
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -181,7 +182,7 @@
         .volume-range {
             height: 2px;
             left: 8px;
-            opacity: 1;
+            opacity: 0;
             position: absolute;
             right: 8px;
         }

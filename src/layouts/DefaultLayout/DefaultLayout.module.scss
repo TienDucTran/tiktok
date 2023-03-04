@@ -1,3 +1,4 @@
+// @import './styles/_responsive'
 .wrapper {
     min-height: 100vh;
     display: flex;
@@ -18,6 +19,9 @@
     padding: 0 var(--default-layout-horizontal-spacer) 0
         calc(var(--default-layout-horizontal-spacer) - 4px);
     margin-top: var(--default-layout-header-height);
+    // @include tablet {
+    //     padding-top: 12px;
+    // }
 }
 
 .nav-container {

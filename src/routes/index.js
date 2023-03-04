@@ -9,6 +9,8 @@ import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Live from '~/pages/Live'
 import Register from '~/pages/Register'
+import Tag from '~/pages/Tag';
+import MusicPage from '~/pages/Music';
 
 // config
 import config from '~/config';
@@ -22,6 +24,8 @@ export const publicRoutes = [
     { path: config.routes.search, component: Search },
     { path: config.routes.live, component: Live, layout: DefaultLayout },
     { path: config.routes.register, component: Register, layout: DefaultLayout },
+    { path: config.routes.tag, component: Tag, layout: HeaderOnly },
+    { path: config.routes.music, component: MusicPage, layout: HeaderOnly },
 ]
 export const privateRoutes = [
 

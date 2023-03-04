@@ -9,11 +9,13 @@ import styles from './DefaultLayout.module.scss'
 import Sidebar from "~/layouts/component/Sidebar";
 import { ThemeContext } from "~/context";
 import DownloadApp from "~/layouts/component/DownloadApp";
+// import { MediaQueryContext } from "~/context/MediaQueryContext";
+
 
 const cx = classNames.bind(styles)
 
 function DefaultLayout({ children }) {
-
+    // const breakpoint = useContext(MediaQueryContext)
     const value = useContext(ThemeContext)
     return (
         <div className={cx('wrapper', value.theme)}>

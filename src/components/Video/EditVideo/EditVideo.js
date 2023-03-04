@@ -18,6 +18,8 @@ function EditVideo(props, ref) {
         observer.current = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 videoRef.current.play();
+
+
             } else {
                 videoRef.current.pause();
             }
@@ -49,6 +51,7 @@ function EditVideo(props, ref) {
             className={cx('wrapper')}
             src={props.data.file_url}
             loop
+            muted
         />
     );
 }
