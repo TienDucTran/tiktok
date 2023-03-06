@@ -56,7 +56,7 @@ function SuggestedAccounts({ label }) {
         <div className={cx('wrapper')}>
             <p className={cx('label')}>{label}</p>
             {suggested.map(data => (
-                <AccountItems key={data.id} data={data} >
+                <AccountItems key={data.id} data={data} offset={[-22, 2]} >
                     <Link to={`/@/${data.nickname}`} className={cx('account-item')} >
                         <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
                         <div className={cx('info')}>

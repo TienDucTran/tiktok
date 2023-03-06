@@ -52,7 +52,7 @@ function VideoItem({ data }) {
 
     return (
         <div className={cx('wrapper')}>
-            <AccountItems data={data} profile>
+            <AccountItems data={data} profile offset={[120, 4]}>
                 <Link to={`/@/${data.user.nickname}`} className={cx('avatar')}>
                     <Image className={cx('avatar-img')} src={data.user.avatar} alt={data.user.full_name} />
                 </Link>
@@ -60,7 +60,7 @@ function VideoItem({ data }) {
             <div className={cx('content')} >
                 <div className={cx('header')}>
                     <div className={cx('info')}>
-                        <AccountItems data={data} profile>
+                        <AccountItems data={data} profile offset={[-41, 31]}>
                             <Link to={`/@/${data.user.nickname}`} className={cx('info-link')}>
                                 <h3 className={cx('nick-name')}>{data.user.nickname}</h3>
                                 {data.user.tick && <TickIcon className={cx('tick-blue')} />}
