@@ -1,0 +1,61 @@
+// @import './styles/_responsive'
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &.dark {
+        background-color: var(--black);
+        color: var(--white);
+    }
+}
+.container {
+    width: var(--big-layout-width);
+    max-width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 var(--default-layout-horizontal-spacer) 0
+        calc(var(--default-layout-horizontal-spacer) - 4px);
+    margin-top: var(--default-layout-header-height);
+    // @include tablet {
+    //     padding-top: 12px;
+    // }
+}
+
+.nav-container {
+    position: relative;
+    width: 240px;
+    margin-left: -20px;
+}
+.scroll-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    top: 60px;
+    bottom: 0;
+    width: inherit;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+    &::-webkit-scrollbar {
+        display: none; /* Ẩn thanh cuộn bằng mặc định */
+    }
+    &:hover::-webkit-scrollbar {
+        display: block; /* Hiển thị thanh cuộn khi người dùng di chuột qua */
+    }
+}
+.content {
+    display: flex;
+    flex: 1 1 auto;
+    margin-right: -24px;
+    flex-direction: column;
+    // margin: 0px auto;
+    padding: 32px 24px;
+    min-height: calc(100vh - 59px);
+}

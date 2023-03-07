@@ -10,12 +10,12 @@ function SidebarFooter() {
         <div className={cx('wrapper')}>
 
             <div className={cx('effect-container')}>
-                <Button className={cx('effect-link')} href='https://effecthouse.tiktok.com/?utm_content=left_sidebar&utm_source=tiktok_webapp_main'>
+                <a className={cx('effect-link')} href='https://effecthouse.tiktok.com/?utm_content=left_sidebar&utm_source=tiktok_webapp_main'>
                     <img className={cx('effect-img')} src="https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/webapp/main/webapp-desktop/045b2fc7c278b9a30dd0.png" alt="background" />
                     <Button icon={<EffectsIcon />} className={cx('button-effct')}>
                         <h4 className={cx('text-effect')}> Create effects</h4>
                     </Button>
-                </Button >
+                </a >
             </div >
 
             <div className={cx('link-container')}>

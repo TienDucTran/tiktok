@@ -1,5 +1,5 @@
 // Layouts
-import { DefaultLayout, HeaderOnly } from '~/layouts';
+import { DefaultLayout, BigLayout } from '~/layouts';
 
 // Pages
 import Home from '~/pages/Home';
@@ -19,13 +19,13 @@ import config from '~/config';
 export const publicRoutes = [
     { path: config.routes.home, component: Home, layout: DefaultLayout },
     { path: config.routes.following, component: Following, layout: DefaultLayout },
-    { path: config.routes.profile, component: Profile, layout: DefaultLayout },
-    { path: config.routes.upload, component: Upload, layout: HeaderOnly },
+    { path: config.routes.profile, component: Profile, layout: BigLayout },
+    { path: config.routes.upload, component: Upload, layout: BigLayout },
     { path: config.routes.search, component: Search },
     { path: config.routes.live, component: Live, layout: DefaultLayout },
     { path: config.routes.register, component: Register, layout: DefaultLayout },
-    { path: config.routes.tag, component: Tag, layout: HeaderOnly },
-    { path: config.routes.music, component: MusicPage, layout: HeaderOnly },
+    { path: config.routes.tag, component: Tag, layout: BigLayout },
+    { path: config.routes.music, component: MusicPage, layout: BigLayout },
 ]
 export const privateRoutes = [
 

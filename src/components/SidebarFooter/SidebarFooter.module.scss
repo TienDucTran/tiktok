@@ -30,8 +30,9 @@
 }
 .button-effct {
     position: absolute;
-    top: 50%;
-    transform: translate(70%, -44%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
 
     .text-effect {
         color: var(--input-color);
