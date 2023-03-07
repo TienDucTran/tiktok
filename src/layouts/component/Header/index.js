@@ -71,7 +71,7 @@ function Header({ biginner = false }) {
         {
             icon: <PersonIcon />,
             title: 'View profile',
-            to: '/@/tienducne'
+            to: '/@/tienduc'
         },
         {
             icon: <TiktokIcon />,

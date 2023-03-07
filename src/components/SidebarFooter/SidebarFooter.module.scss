@@ -21,8 +21,10 @@
 }
 .effect-link {
     border: none;
-    // &:hover {
-    // }
+    &:hover .button-effct {
+        transform: scale(1.1);
+        transition: transform 0.2s ease 0s;
+    }
 }
 .effect-img {
     height: 52px;
@@ -31,7 +33,7 @@
 .button-effct {
     position: absolute;
     display: flex;
-    width: 100%;
+    width: 96%;
     justify-content: center;
 
     .text-effect {

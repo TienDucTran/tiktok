@@ -9,13 +9,13 @@ import { MediaQueryProvider } from './context/MediaQueryContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <ThemeProvider>
-            <MediaQueryProvider>
-                <GlobalStyles>
+        <GlobalStyles>
+            <ThemeProvider>
+                <MediaQueryProvider>
                     <App />
-                </GlobalStyles>
-            </MediaQueryProvider>
-        </ThemeProvider>
+                </MediaQueryProvider>
+            </ThemeProvider>
+        </GlobalStyles>
     </React.StrictMode>,
 );
 

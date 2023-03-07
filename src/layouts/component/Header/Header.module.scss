@@ -26,6 +26,8 @@
 
     &.biginner {
         width: var(--big-layout-width);
+        padding: 0 var(--default-layout-horizontal-spacer) 0
+            calc(var(--default-layout-horizontal-spacer) - 8px);
     }
 }
 .logo {
