@@ -13,7 +13,7 @@ function Button({ to,
     upload = false,
     outline = false,
     disable = false,
-    rounded,
+    rounded = false,
     small = false,
     medium = false,
     large = false,
@@ -22,10 +22,12 @@ function Button({ to,
     theme = false,
     className,
     onClick,
+    key,
     ...passProps }) {
     let Comp = 'button'
     const props = {
         onClick,
+        key,
         ...passProps
     }
     //! remove event listener when btn is disable
@@ -80,6 +82,7 @@ Button.propTypes = {
     icon: PropTypes.node,
     className: PropTypes.string,
     onClick: PropTypes.func,
+    key: PropTypes.number,
 }
 
 export default Button;

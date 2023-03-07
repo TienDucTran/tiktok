@@ -29,7 +29,7 @@ function Inbox({ children }) {
     )
 }
 Inbox.propTypes = {
-    children: PropTypes.string
+    children: PropTypes.node.isRequired
 }
 export default Inbox
 

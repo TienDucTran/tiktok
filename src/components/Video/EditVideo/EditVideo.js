@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import classNames from "classnames/bind";
-import PropTypes from 'prop-types';
 import { useRef, useImperativeHandle, forwardRef, useEffect } from "react";
 
 import styles from './EditVideo.module.scss'
@@ -32,7 +31,10 @@ function EditVideo(props, ref) {
         }
     }, [])
 
+    // useEffect(() => {
 
+    //     console.log(videoRef);
+    // })
 
 
     useImperativeHandle(ref, () => ({
@@ -43,6 +45,7 @@ function EditVideo(props, ref) {
             videoRef.current.pause()
         },
         volume: videoRef.current.volume,
+        muted: videoRef.current.muted,
     }))
 
     return (
@@ -56,8 +59,5 @@ function EditVideo(props, ref) {
     );
 }
 
-EditVideo.propTypes = {
-    props: PropTypes.object.isRequired,
-    ref: PropTypes.object.isRequired
-}
+
 export default forwardRef(EditVideo);

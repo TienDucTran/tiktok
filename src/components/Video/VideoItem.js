@@ -19,15 +19,14 @@ function VideoItem({ data }) {
     const [isMuted, setIsMuted] = useState(true)
     const [volume, setVolume] = useState(0.5);
 
-    useEffect(() => {
-        // videoRef.current.volume = volume
-        // console.log(videoRef.current.volume);
-        // console.log(videoRef.current);
-    })
+    // useEffect(() => {
+    //     ;
+    //     console.log(videoRef);
+    // })
 
     useEffect(() => {
         videoRef.current.volume = volume
-        console.log(videoRef.current.volume);
+        // console.log(videoRef.current.volume);
 
     }, [volume])
 
@@ -45,7 +44,7 @@ function VideoItem({ data }) {
     }
 
     const handleClickSound = () => {
-
+        videoRef.current.muted = !videoRef.current.muted
         setIsMuted(!isMuted)
     }
 

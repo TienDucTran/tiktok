@@ -15,6 +15,7 @@ function ActionItem({ data, children }) {
     );
 }
 ActionItem.propTypes = {
-    data: PropTypes.string.isRequired
+    children: PropTypes.node.isRequired,
+    // data: PropTypes.node.isRequired
 }
 export default ActionItem;

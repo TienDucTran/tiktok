@@ -31,6 +31,6 @@ function GetApp({ children }) {
     );
 }
 GetApp.propTypes = {
-    children: PropTypes.string.isRequired
+    children: PropTypes.node.isRequired
 }
 export default GetApp;
