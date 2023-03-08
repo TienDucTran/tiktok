@@ -53,8 +53,34 @@
         }
         .edit-container {
             margin: 16px 0px 0px;
+            font-family: SofiaPro;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            position: relative;
+            width: 208px;
+            height: 36px;
+            padding: 0px;
         }
     }
+}
+.btn-follow-container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    min-width: 208px;
+    height: 36px;
+    line-height: 22px;
+    z-index: unset;
+    opacity: 0;
+}
+.btn-messages-container {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: unset;
+    opacity: 1;
 }
 
 .count-info {
@@ -87,11 +113,17 @@
     line-height: 22px;
     margin-top: 10px;
 }
-.action {
+.action-share {
     position: absolute;
     top: 11px;
     right: 52px;
     cursor: pointer;
+}
+.action-more {
+    position: absolute;
+    top: 11px;
+    cursor: pointer;
+    right: 12px;
 }
 .video-container {
     .video-feedtab {

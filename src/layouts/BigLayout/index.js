@@ -11,6 +11,7 @@ import SmallSidebar from "~/layouts/component/SmallSidebar";
 const cx = classNames.bind(styles)
 
 function BigLayout({ children }) {
+
     return (
         <div className={cx('wrapper')}>
             <Header biginner />

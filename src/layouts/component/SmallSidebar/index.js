@@ -9,6 +9,7 @@ import styles from './SmallSidebar.module.scss';
 
 const cx = classNames.bind(styles)
 function SmallSidebar() {
+    const isGuest = true
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -16,6 +17,7 @@ function SmallSidebar() {
                 <MenuItem title="Following" to={config.routes.following} icon={<UserGroupIcon />} activeIcon={<UserGroupActiveIcon />} />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
+            {isGuest && <SuggestedAccounts label="Suggested accounts" />}
             <SuggestedAccounts label="Following accounts" />
             <SidebarDiscovery />
             <SidebarFooter />

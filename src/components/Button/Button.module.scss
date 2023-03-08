@@ -22,7 +22,6 @@
     height: 20px;
     margin-right: 8px;
 }
-//* làm riêng cho nút tua lên
 
 .primary {
     display: inline-flex;
@@ -90,8 +89,17 @@
     padding: 0;
     position: relative;
 }
-
 .small {
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    span {
+        margin: 0;
+    }
+}
+.xsmall {
     min-width: 88px;
     padding: 2px 8px;
 }
@@ -103,6 +111,14 @@
     font-weight: 600;
     padding: 6px 8px;
 }
+.xmedium {
+    min-width: 164px;
+    min-height: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: SofiaPro, PingFangSC, sans-serif;
+    margin-right: 8px;
+}
 .large {
     font-size: 18px;
     width: 100%;
@@ -111,4 +127,10 @@
     min-width: 168px;
     padding: 6px 8px;
     margin-top: 20px;
+}
+.xlarge {
+    min-width: 208px;
+    min-height: 36px;
+    font-size: 18px;
+    font-family: SofiaPro;
 }

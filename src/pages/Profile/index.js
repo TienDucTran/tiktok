@@ -1,18 +1,20 @@
 import classNames from "classnames/bind";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import Tippy from '@tippyjs/react';
+
 import Button from "~/components/Button";
-import { EditIcon, LockIcon, NoVideoIcon, ShareIconWhite } from "~/components/Icons";
+import { EditIcon, LockIcon, MoreActionIcon, NoVideoIcon, ShareIconWhite, UnfollowIcon } from "~/components/Icons";
 import Image from "~/components/Image";
 import styles from './Profile.module.scss'
 import * as userProfileService from '~/services/userProfileService'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 
 const cx = classNames.bind(styles)
 function Profile() {
-
+    const isGuest = true
     const [userProfile, setUserProfile] = useState({})
     useEffect(() => {
         const fetchApi = async () => {
@@ -38,7 +40,22 @@ function Profile() {
                         </p>
                         <span className={cx('username')}>Trần Tiến Đức</span>
                         <div className={cx('edit-container')}>
-                            <Button upload icon={<EditIcon />}><strong>Edit profile</strong></Button>
+
+                            <div className={cx('btn-follow-container')}>
+                                <Button primary xlarge ><strong>Follow</strong></Button>
+                            </div>
+                            {isGuest
+                                ? <div className={cx('btn-messages-container')}>
+                                    <Button outline xmedium >Messages</Button>
+                                    <Tippy delay={[0, 100]} interactive content='Unfollow' placement='bottom'>
+                                        <div>
+                                            <Button upload small icon={<UnfollowIcon />} />
+
+                                        </div>
+                                    </Tippy>
+                                </div>
+                                : <Button upload icon={<EditIcon />}><strong>Edit profile</strong></Button>}
+
                         </div>
                     </div>
                 </div>
@@ -59,7 +76,8 @@ function Profile() {
                 </div>
 
                 <p className={cx('bio-info')}>No bio yet.</p>
-                <div className={cx('action')}><ShareIconWhite /></div>
+                <div className={cx('action-share')}><ShareIconWhite /></div>
+                {isGuest && <div className={cx('action-more')}><MoreActionIcon /></div>}
             </header>
 
             <section className={cx('video-container')}>
