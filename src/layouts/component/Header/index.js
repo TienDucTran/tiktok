@@ -1,18 +1,17 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
-import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
+import 'tippy.js/dist/tippy.css';
 
-import styles from './Header.module.scss'
-import images from '~/assets/images';
 import Button from '~/components/Button';
-import { Menu } from '~/components/Popper';
-import { CameraIcon, FeedbackIcon, InboxIcon, KeyboadIcon, LanguageIcon, LogoutIcon, MenuIcon, MessageIcon, PersonIcon, PlusIcon, SettingIcon, ThemeIcon, TiktokIcon } from '~/components/Icons';
-import Inbox from '~/components/Popper/Inbox';
+import { CameraIcon, FeedbackIcon, InboxIcon, KeyboadIcon, LanguageIcon, LogoTikTokIcon, LogoutIcon, MenuIcon, MessageIcon, PersonIcon, PlusIcon, SettingIcon, ThemeIcon, TiktokIcon } from '~/components/Icons';
 import Image from '~/components/Image';
+import { Menu } from '~/components/Popper';
+import Inbox from '~/components/Popper/Inbox';
+import config from '~/config';
 import Search from '~/layouts/component/Search';
-import config from '~/config'
+import styles from './Header.module.scss';
 
 
 const cx = classNames.bind(styles)
@@ -98,7 +97,7 @@ function Header({ biginner = false }) {
     return <header className={cx('wrapper')}>
         <div className={cx('inner', { biginner: biginner })}>
             <Link to={config.routes.home} className={cx('logo')}>
-                <img src={images.logo} alt="Tiktok" />
+                <LogoTikTokIcon />
             </Link>
 
             <Search />
@@ -108,15 +107,15 @@ function Header({ biginner = false }) {
                 {currentUser ? (
                     <>
                         <Tippy delay={[0, 100]} content='Messages' placement='bottom'>
-                            <button className={cx('action-btn')}>
+                            <button className={cx('action-message-icon')}>
                                 <MessageIcon className={cx('message-icon')} />
                             </button>
                         </Tippy>
 
                         <Inbox>
-                            <button className={cx('action-btn')}>
+                            <button className={cx('action-inbox-icon')}>
                                 <InboxIcon />
-                                <span className={cx('badge')}>12</span>
+                                <span className={cx('badge')}>69</span>
                             </button>
                         </Inbox>
 

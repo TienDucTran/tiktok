@@ -18,7 +18,7 @@ function Search() {
     const [loading, setLoading] = useState(false)
 
     const inputRef = useRef()
-    const debounced = useDebounce(searchValue, 500)
+    const debounced = useDebounce(searchValue, 600)
 
     useEffect(() => {
         if (!debounced.trim()) {
@@ -85,13 +85,13 @@ function Search() {
                     />
                     {!!setSearchValue && !loading && (
                         <button
-                            className={cx('close')}
+                            className={cx('close-icon')}
                             onClick={handleClear}>
                             <CloseIcon />
                         </button>
                     )}
 
-                    {loading && <LoadingIcon className={cx('loading')} />}
+                    {loading && <LoadingIcon className={cx('loading-icon')} />}
 
                     <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
                         <SearchIcon />

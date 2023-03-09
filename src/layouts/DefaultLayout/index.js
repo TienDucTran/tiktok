@@ -18,12 +18,12 @@ function DefaultLayout({ children }) {
     // const breakpoint = useContext(MediaQueryContext)
     const value = useContext(ThemeContext)
     return (
-        <div className={cx('wrapper', value.theme)}>
+        <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
                 {/* <div className={cx('mask')}></div> */}
                 <div className={cx('nav-container')}>
-                    <div className={cx('scroll-container')}>
+                    <div className={cx('scroll-container', value.theme)}>
                         <Sidebar />
                     </div>
                 </div>

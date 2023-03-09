@@ -14,7 +14,7 @@
 .menu-item {
     display: flex;
     align-items: center;
-    color: var(--input-color);
+    color: var(--text-primary-color);
     width: 100%;
     min-height: 42px;
     text-align: left;
@@ -23,7 +23,7 @@
         background: rgba(22, 24, 35, 0.03);
     }
     &.separate {
-        border-top: 1px solid rgba(22, 24, 35, 0.12);
+        border-top: 1px solid var(--background-gray-color-12);
     }
 }
 //Header

@@ -12,7 +12,7 @@
         bottom: 0;
         right: 8px;
         left: 8px;
-        background: rgba(22, 24, 35, 0.12);
+        background: var(--background-gray-color-12);
     }
 }
 
@@ -62,6 +62,7 @@
     margin-right: 114px;
 }
 .header-description {
+    color: var(--black-color);
     font-size: 16px;
     line-height: 22px;
     span {
@@ -71,7 +72,7 @@
     .description-link {
         display: inline-block;
         font-weight: 600;
-        color: #161823;
+        color: var(--text-primary-color);
     }
 }
 .description-link:hover {
@@ -80,7 +81,7 @@
 // .header-place {
 // }
 .header-music {
-    color: var(--input-color);
+    color: var(--text-primary-color);
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -107,7 +108,7 @@
         position: absolute;
         right: 16px;
         top: 24px;
-        color: var(--white);
+        color: var(--white-color);
         font-weight: 600;
         font-size: 16px;
         line-height: 22px;
@@ -122,7 +123,7 @@
         width: 40px;
         height: 40px;
         background-color: transparent;
-        color: var(--white);
+        color: var(--white-color);
         padding: 10px;
         transition: opacity 0.3s;
         cursor: pointer;
@@ -193,7 +194,7 @@
         width: 40px;
         height: 40px;
         background-color: transparent;
-        color: var(--white);
+        color: var(--white-color);
         padding: 8px;
         transition: opacity 0.3s ease 0s;
         transform: rotate(-90deg);

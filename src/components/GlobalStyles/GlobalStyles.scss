@@ -1,15 +1,59 @@
 @import 'normalize.css';
 :root {
     --primary: #fe2c55;
-    --text-color: #999;
-    --white: #fff;
-    --black: #000;
-    --border-color: #1618231f;
-    --button-color: #161823bf;
-    --input-color: #161823;
+    --black-color: #000;
+    --white-color: #fff;
+    --white-color-2: #fff;
+    --white-color-3: #fff;
+    --white-color-4: #fff;
+
+    --text-primary-color: #161823;
+    --text-gray-color: #161823bf;
+    --text-gray-color-2: #16182380;
+
+    --background-gray-color-01: #f8f8f8;
+    --background-gray-color-02: #16182333;
+    --background-gray-color-06: #1618230f;
+    --background-gray-color-9: #16182308;
+    --background-gray-color-10: #16182333;
+    --background-gray-color-12: #1618231f;
+    --background-gray-color-18: #0000001f;
+    --background-gray-color-21: #1618231f;
+    --background-gray-color-34: #16182357;
+    --background-gray-color-69: #c5c6c9;
+    --border-color: #d0d1d3;
+
     --font-family: 'ProximaNova', sans-serif;
 
     //* Defaultlayout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+    --big-layout-width: 1366px;
+    --default-layout-horizontal-spacer: 24px;
+}
+[data-theme='dark']:root {
+    --black-color: #fff;
+    --white-color: #121212;
+    --white-color-2: #ffffff14;
+    --white-color-3: #252525;
+    --white-color-4: #2e2e2e;
+    --text-primary-color: #ffffffe6;
+    --text-gray-color: #ffffffbf;
+    --text-gray-color-2: #feffff80;
+
+    --background-gray-color-01: #121212;
+    --background-gray-color-02: #ffffff33;
+    --background-gray-color-06: #ffffff1f;
+    --background-gray-color-9: #ffffff0a;
+    --background-gray-color-10: transparent;
+    --background-gray-color-12: #ffffff1f;
+    --background-gray-color-18: #ffffff1f;
+    --background-gray-color-21: transparent;
+    --background-gray-color-34: #ffffff57;
+    --background-gray-color-69: transparent;
+    --border-color: #d0d1d3;
+
+    --font-family: 'ProximaNova', sans-serif;
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --big-layout-width: 1366px;
@@ -25,6 +69,8 @@ html {
 }
 body {
     font-family: var(--font-family);
+    background-color: var(--white-color);
+    color: var(--text-primary-color);
     text-rendering: optimizeSpeed;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -39,12 +85,12 @@ html *::-webkit-scrollbar {
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(22, 24, 35, 0.06);
+    background-color: var(--background-gray-color-06);
 }
 
 html *::-webkit-scrollbar-track {
     border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
 }
 
 button,
@@ -55,7 +101,7 @@ input,
 }
 
 a {
-    color: var(--input-color);
+    color: var(--text-primary-color);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -97,8 +143,8 @@ body {
     .tippy-box {
         z-index: 999;
         position: relative;
-        background-color: rgba(84, 84, 84, 0.92);
-        color: #ffffff;
+        background-color: #545454eb;
+        color: #fff;
         font-size: 1.6rem;
         line-height: 2.2rem;
         font-weight: 600;
@@ -111,7 +157,7 @@ body {
     .tippy-arrow {
         width: 16px;
         height: 16px;
-        color: rgba(84, 84, 84, 0.92);
+        color: #545454eb;
     }
     .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
         top: -8px;

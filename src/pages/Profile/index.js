@@ -41,9 +41,9 @@ function Profile() {
                         <span className={cx('username')}>Trần Tiến Đức</span>
                         <div className={cx('edit-container')}>
 
-                            <div className={cx('btn-follow-container')}>
+                            {/* <div className={cx('btn-follow-container')}>
                                 <Button primary xlarge ><strong>Follow</strong></Button>
-                            </div>
+                            </div> */}
                             {isGuest
                                 ? <div className={cx('btn-messages-container')}>
                                     <Button outline xmedium >Messages</Button>
@@ -54,7 +54,9 @@ function Profile() {
                                         </div>
                                     </Tippy>
                                 </div>
-                                : <Button upload icon={<EditIcon />}><strong>Edit profile</strong></Button>}
+                                :
+                                <Button className={cx('btn-edit-container')} upload icon={<EditIcon />}><strong>Edit profile</strong></Button>
+                            }
 
                         </div>
                     </div>

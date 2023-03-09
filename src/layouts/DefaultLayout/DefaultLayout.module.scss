@@ -4,10 +4,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    &.dark {
-        background-color: var(--black);
-        color: var(--white);
-    }
 }
 .container {
     width: var(--default-layout-width);
@@ -48,6 +44,9 @@
     }
     &:hover::-webkit-scrollbar {
         display: block; /* Hiển thị thanh cuộn khi người dùng di chuột qua */
+    }
+    &.dark {
+        background-color: var(--white-color);
     }
 }
 .content {

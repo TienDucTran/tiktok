@@ -6,10 +6,10 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
-    background-color: var(--black);
+    background-color: var(--black-color);
     h1,
     p {
-        color: var(--white);
+        color: var(--white-color);
     }
 }
 
@@ -23,7 +23,7 @@
 
 .link,
 .link:visited {
-    color: var(--white);
+    color: var(--white-color);
 }
 
 input[type='text'],
@@ -36,7 +36,7 @@ textarea {
 }
 
 .label-item {
-    color: var(--white);
+    color: var(--white-color);
     margin-top: 1rem;
 }
 

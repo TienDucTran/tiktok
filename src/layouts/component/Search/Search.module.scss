@@ -11,7 +11,7 @@
     position: relative;
     height: var(--search-height);
     padding: 0 16px;
-    background-color: #1618230f;
+    background-color: var(--background-gray-color-06);
     border-radius: var(--search-boder-radius);
     border: 1.5px solid transparent;
     display: flex;
@@ -23,17 +23,17 @@
         height: 70%;
         caret-color: var(--primary);
         padding: 0 40px 0 0;
-        color: var(--black);
+        color: var(--black-color);
         background-color: transparent;
         font-family: var(--font-family);
     }
     input:not(:placeholder-shown) ~ .search-btn {
-        color: var(--button-color);
+        color: var(--text-gray-color);
     }
-    input:not(:placeholder-shown) ~ .close {
+    input:not(:placeholder-shown) ~ .close-icon {
         display: flex;
     }
-    input:not(:placeholder-shown) ~ .loading {
+    input:not(:placeholder-shown) ~ .loading-icon {
         display: flex;
     }
 
@@ -42,12 +42,12 @@
         position: absolute;
         height: calc(var(--search-height) - var(--search-top-spacer) * 2);
         width: 1px;
-        background-color: var(--border-color);
+        background-color: var(--background-gray-color-12);
         top: var(--search-top-spacer);
         right: var(--search-button-width);
     }
     &:focus-within {
-        border-color: #c5c6c9;
+        border-color: var(--background-gray-color-69);
     }
 }
 
@@ -55,18 +55,19 @@
     padding: 5px 12px;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #16182380;
+    color: var(--text-gray-color-2);
 }
-.close,
-.loading {
+.close-icon,
+.loading-icon {
+    display: none;
     font-size: 1.6rem;
     margin: 0px 12px;
-    color: var(--search-color);
+    color: var(--background-gray-color-34);
+    background: transparent;
     position: absolute;
     right: calc(var(--search-button-width));
     top: 50%;
     transform: translateY(-50%);
-    display: none;
 
     &:hover {
         cursor: pointer;
@@ -90,17 +91,18 @@
     width: var(--search-button-width);
     height: 100%;
     font-size: 2rem;
-    color: var(--search-color);
+    color: var(--background-gray-color-34);
+    background-color: transparent;
     margin-right: -16px;
     padding: 4px 16px 0 12px;
     border-top-right-radius: var(--search-boder-radius);
     border-bottom-right-radius: var(--search-boder-radius);
 
     &:hover {
-        background: rgba(22, 24, 35, 0.03);
+        background-color: var(--background-gray-color-9);
         cursor: pointer;
     }
     &:active {
-        background: rgba(22, 24, 35, 0.06);
+        background: var(--background-gray-color-06);
     }
 }

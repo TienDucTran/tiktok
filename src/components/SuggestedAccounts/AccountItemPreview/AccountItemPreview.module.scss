@@ -18,7 +18,7 @@
 }
 
 .name {
-    color: var(--input-color);
+    color: var(--text-primary-color);
     font-size: 1.8rem;
     line-height: 2.2rem;
     font-weight: 700;
@@ -32,7 +32,7 @@
 .username {
     font-size: 1.4rem;
     line-height: 2rem;
-    color: var(--button-color);
+    color: var(--text-gray-color);
     font-weight: 600;
 }
 .footer {
@@ -44,9 +44,10 @@
     font-size: 17px;
     line-height: 20px;
     display: inline-block;
+    color: var(--black-color);
 }
 .user-like {
-    color: var(--button-color);
+    color: var(--text-gray-color);
     font-size: 17px;
     line-height: 20px;
     display: inline-block;
@@ -59,5 +60,5 @@
     line-height: 20px;
     padding-top: 16px;
     margin-top: 16px;
-    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    border-top: 1px solid var(--background-gray-color-12);
 }

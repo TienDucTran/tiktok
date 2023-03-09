@@ -1,8 +1,11 @@
 import Context from './Context';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Provider({ children }) {
     const [theme, setTheme] = useState('light')
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme)
+    }, [theme])
     const handleClick = () => {
         if (theme === "dark") {
             // i18n.changeLanguage('en')
