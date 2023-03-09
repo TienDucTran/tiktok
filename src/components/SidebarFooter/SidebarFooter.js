@@ -2,16 +2,20 @@ import classNames from "classnames/bind";
 import Button from "../Button";
 import { EffectsIcon } from "../Icons";
 import styles from './SidebarFooter.module.scss'
-
+import images from '~/assets/images';
+import { useContext } from "react";
+import { ThemeContext } from "~/context";
 const cx = classNames.bind(styles)
 
 function SidebarFooter() {
+    const value = useContext(ThemeContext)
+
     return (
         <div className={cx('wrapper')}>
 
             <div className={cx('effect-container')}>
                 <a className={cx('effect-link')} href='https://effecthouse.tiktok.com/?utm_content=left_sidebar&utm_source=tiktok_webapp_main'>
-                    <img className={cx('effect-img')} src="https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/webapp/main/webapp-desktop/045b2fc7c278b9a30dd0.png" alt="background" />
+                    <img className={cx('effect-img')} src={images[value.theme]} alt="theme-img" />
                     <Button icon={<EffectsIcon />} className={cx('button-effct')}>
                         <h4 className={cx('text-effect')}> Create effects</h4>
                     </Button>
