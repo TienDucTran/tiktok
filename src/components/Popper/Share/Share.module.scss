@@ -1,0 +1,52 @@
+.share-wrapper {
+    width: 284px;
+    position: absolute;
+}
+.share-poper {
+    padding-right: 4px;
+}
+.share-list {
+    max-height: 448px;
+    padding: 8px 0;
+
+    .share-item {
+        color: var(--back-color);
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 11px 16px;
+        margin: 0px 3px 0px 4px;
+        border: none;
+        position: relative;
+        span:not(:last-of-type) {
+            margin-right: 12px;
+            height: 26px;
+        }
+        &:hover {
+            background-color: var(--background-gray-color-9);
+        }
+    }
+    .share-more-item {
+        display: flex;
+        width: 100%;
+        color: var(--back-color);
+        align-items: center;
+        justify-content: center;
+        padding: 0px 16px;
+        position: relative;
+        margin: 0px 4px;
+        span {
+            margin: 0;
+        }
+        &:hover {
+            background-color: var(--background-gray-color-9);
+        }
+    }
+}
+.share-list.active {
+    overflow-y: auto;
+    overflow-x: hidden;
+}

@@ -9,6 +9,60 @@
         bottom: 0;
     }
 }
+.active {
+    display: none;
+    & ~ .download-container {
+        display: flex;
+    }
+}
+.download-container {
+    position: relative;
+    bottom: -1px;
+    background: var(--white-color-3);
+    box-shadow: #0000000f 0px 2px 8px;
+    border: 1px solid var(--background-gray-color-27);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0.14, 0.3, 1) 0s;
+    transform-origin: right bottom;
+    transform: none;
+    right: -1px;
+    display: none;
+}
+
+.download-close-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+}
+.download-wrapper-icon {
+    margin-right: 48px;
+    margin-left: 16px;
+    .download-item-icon {
+        display: flex;
+        width: 100%;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--text-primary-color);
+        margin: 6px 0px;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--background-gray-color-9);
+        }
+    }
+    .download-split-center {
+        width: calc(100% - 16px);
+        height: 1px;
+        position: relative;
+        background-color: var(--background-gray-color-36);
+        transform: scaleY(0.5);
+        left: 8px;
+    }
+}
 .scroll-top {
     margin-bottom: 8px;
     margin-top: 12px;

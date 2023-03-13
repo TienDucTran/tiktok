@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import { useState } from 'react';
+import { ArrowIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import Header from './Header';
 import styles from './Menu.module.scss';
@@ -39,6 +40,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             render={attrs => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
+                        <ArrowIcon className={cx('arrow-top-poper')} />
                         {history.length > 1 &&
                             <Header
                                 title={currentMenu.title}

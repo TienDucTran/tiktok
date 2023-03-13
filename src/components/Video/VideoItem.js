@@ -10,6 +10,7 @@ import EditVideo from "./EditVideo";
 import { useEffect, useRef, useState } from "react";
 import ActionItem from "./ActionItem";
 import AccountItems from "../SuggestedAccounts/AccountItems";
+import Share from "../Popper/Share/Share";
 const cx = classNames.bind(styles)
 
 function VideoItem({ data }) {
@@ -113,9 +114,13 @@ function VideoItem({ data }) {
                         <ActionItem data={data.comments_count} >
                             <CommentIcon />
                         </ActionItem>
-                        <ActionItem data={data.hares_count} >
-                            <ShareIcon />
-                        </ActionItem>
+                        <Share placement="top-start" offset={[-15, 305]} arrowdow>
+                            <div>
+                                <ActionItem data={data.hares_count} >
+                                    <ShareIcon />
+                                </ActionItem>
+                            </div>
+                        </Share>
 
                     </div>
                 </div>

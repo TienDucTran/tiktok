@@ -9,12 +9,13 @@ import { EditIcon, LockIcon, MoreActionIcon, NoVideoIcon, ShareIconWhite, Unfoll
 import Image from "~/components/Image";
 import styles from './Profile.module.scss'
 import * as userProfileService from '~/services/userProfileService'
+import Share from "~/components/Popper/Share/Share";
 
 
 
 const cx = classNames.bind(styles)
 function Profile() {
-    const isGuest = true
+    const isGuest = false
     const [userProfile, setUserProfile] = useState({})
     useEffect(() => {
         const fetchApi = async () => {
@@ -78,7 +79,12 @@ function Profile() {
                 </div>
 
                 <p className={cx('bio-info')}>No bio yet.</p>
-                <div className={cx('action-share')}><ShareIconWhite /></div>
+
+                <Share placement="bottom-start" offset={[-230, 0]} arrowtop>
+                    <div className={cx('action-share')}>
+                        <ShareIconWhite />
+                    </div>
+                </Share>
                 {isGuest && <div className={cx('action-more')}><MoreActionIcon /></div>}
             </header>
 

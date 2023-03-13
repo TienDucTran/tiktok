@@ -1,0 +1,41 @@
+.tick-blue {
+    margin-left: 2px;
+    padding-bottom: 3px;
+}
+.mr4 {
+    margin-right: 4px;
+}
+.transform {
+    transform: translateY(2px);
+}
+.opcity {
+    opacity: 0.34;
+    margin-bottom: 24px;
+}
+.arrow-top-poper {
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 8px;
+    top: -8px;
+    right: 14px;
+    color: var(--white-color-3);
+}
+.arrow-top-poper-1 {
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 8px;
+    top: -8px;
+    right: 28px;
+    color: var(--white-color-3);
+}
+
+.arrow-bottom-poper {
+    position: absolute;
+    display: block;
+    bottom: -8px;
+    left: 26px;
+    color: var(--white-color-3);
+    transform: rotate(180deg);
+}

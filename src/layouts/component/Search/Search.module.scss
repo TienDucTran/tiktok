@@ -23,9 +23,13 @@
         height: 70%;
         caret-color: var(--primary);
         padding: 0 40px 0 0;
-        color: var(--black-color);
+        color: var(--text-primary-color);
         background-color: transparent;
         font-family: var(--font-family);
+        font-weight: 400;
+        // &::placeholder {
+        //     color: var(--text-gray-color);
+        // }
     }
     input:not(:placeholder-shown) ~ .search-btn {
         color: var(--text-gray-color);
