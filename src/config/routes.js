@@ -8,5 +8,5 @@ const routes = {
     register: '/register',
     tag: '/tag',
     music: '/music',
-}
-export default routes
+};
+export default routes;

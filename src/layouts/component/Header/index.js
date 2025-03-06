@@ -65,7 +65,7 @@ const MENU_ITEMS = [
     },
 ];
 function Header({ biginner = false }) {
-    const currentUser = false;
+    const currentUser = true;
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
