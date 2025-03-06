@@ -19,37 +19,20 @@
 }
 .btn-change {
     position: absolute;
-    top: 50%;
+    top: 10%;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     background: #fff;
-    transform: translateY(calc(-50%));
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    transition: left 0.2s ease-out;
 }
 
 .dark .btn-change {
-    animation: toggleOn 0.2s ease-out forwards;
+    left: calc(100% - 20px);
 }
 
+/* Default position for light theme */
 .light .btn-change {
-    animation: toggleOff 0.2s ease-out forwards;
-}
-
-@keyframes toggleOn {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: calc(100% - 20px);
-    }
-}
-
-@keyframes toggleOff {
-    0% {
-        left: calc(100% - 20px);
-    }
-    100% {
-        left: 0px;
-    }
+    left: 0;
 }
