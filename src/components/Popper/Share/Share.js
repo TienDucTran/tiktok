@@ -1,19 +1,34 @@
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
-import classNames from "classnames/bind";
-
+import classNames from 'classnames/bind';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import styles from "./Share.module.scss"
+import styles from './Share.module.scss';
 import Button from '~/components/Button';
-import { ArrowDownIcon, ArrowIcon, CopyLinkIcon, EmailIcon, EmbedIcon, FaceBookIcon, LineIcon, LinkedlnIcon, PinterestIcon, RedditIcon, SendIcon, TelegramIcon, TwitterIcon, WhatsAppicon } from '~/components/Icons';
+import {
+    ArrowDownIcon,
+    ArrowIcon,
+    CopyLinkIcon,
+    EmailIcon,
+    EmbedIcon,
+    FaceBookIcon,
+    LineIcon,
+    LinkedlnIcon,
+    PinterestIcon,
+    RedditIcon,
+    SendIcon,
+    TelegramIcon,
+    TwitterIcon,
+    WhatsAppicon,
+} from '~/components/Icons';
 import { useState } from 'react';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 const SHARE_ITEMS = [
     {
         icon: <EmbedIcon />,
         title: 'Embed',
+        to: '/@/tienduc',
     },
     {
         icon: <SendIcon />,
@@ -31,16 +46,22 @@ const SHARE_ITEMS = [
         icon: <CopyLinkIcon />,
         title: 'Copy link',
     },
-]
+];
 
-function Share({ children, placement = '', offset = [], arrowdow = false, arrowtop = false }) {
-    const [active, setActive] = useState(true)
+function Share({
+    children,
+    placement = '',
+    offset = [],
+    arrowdow = false,
+    arrowtop = false,
+}) {
+    const [active, setActive] = useState(true);
     const handleClick = () => {
-        setActive(!active)
-    }
+        setActive(!active);
+    };
     const handleHide = () => {
-        setActive(true)
-    }
+        setActive(true);
+    };
     const shareMenu = [
         ...SHARE_ITEMS,
         {
@@ -71,37 +92,74 @@ function Share({ children, placement = '', offset = [], arrowdow = false, arrowt
             icon: <PinterestIcon />,
             title: 'Share to Pinterest',
         },
-
-    ]
+    ];
     return (
-        <div >
+        <div>
             <Tippy
                 arrow
                 interactive
                 placement={placement}
                 delay={[0, 250]}
                 offset={offset}
-                render={attrs =>
-                    <div className={cx('share-wrapper')} tabIndex="-1" {...attrs} >
+                render={(attrs) => (
+                    <div
+                        className={cx('share-wrapper')}
+                        tabIndex="-1"
+                        {...attrs}
+                    >
                         <PopperWrapper className={cx('share-poper')}>
-                            {arrowdow && <ArrowIcon className={cx('arrow-bottom-poper')} />}
-                            {arrowtop && <ArrowIcon className={cx('arrow-top-poper-1')} />}
+                            {arrowdow && (
+                                <ArrowIcon
+                                    className={cx('arrow-bottom-poper')}
+                                />
+                            )}
+                            {arrowtop && (
+                                <ArrowIcon
+                                    className={cx('arrow-top-poper-1')}
+                                />
+                            )}
 
-
-                            <div className={cx('share-list', { 'active': !active })}>
-                                {active
-                                    ? <>{SHARE_ITEMS.map((items, index) => (
-                                        <Button key={index} className={cx('share-item')} icon={items.icon}>{items.title}</Button>
-
-                                    ))}
-                                        <Button className={cx('share-more-item')} icon={<ArrowDownIcon />} onClick={handleClick} />
+                            <div
+                                className={cx('share-list', {
+                                    active: !active,
+                                })}
+                            >
+                                {active ? (
+                                    <>
+                                        {SHARE_ITEMS.map((items, index) => (
+                                            <Button
+                                                to={items.to}
+                                                key={index}
+                                                itemkey={index}
+                                                className={cx('share-item')}
+                                                icon={items.icon}
+                                            >
+                                                {items.title}
+                                            </Button>
+                                        ))}
+                                        <Button
+                                            className={cx('share-more-item')}
+                                            icon={<ArrowDownIcon />}
+                                            onClick={handleClick}
+                                        />
                                     </>
-                                    : shareMenu.map((items, index) => (
-                                        <Button key={index} className={cx('share-item')} icon={items.icon}>{items.title}</Button>
-                                    ))}
+                                ) : (
+                                    shareMenu.map((items, index) => (
+                                        <Button
+                                            to={items.to}
+                                            key={index}
+                                            itemkey={index}
+                                            className={cx('share-item')}
+                                            icon={items.icon}
+                                        >
+                                            {items.title}
+                                        </Button>
+                                    ))
+                                )}
                             </div>
                         </PopperWrapper>
-                    </div>}
+                    </div>
+                )}
                 onHidden={handleHide}
             >
                 {children}
@@ -115,5 +173,5 @@ Share.propTypes = {
     offset: PropTypes.array.isRequired,
     arrowdow: PropTypes.bool,
     arrowtop: PropTypes.bool,
-}
+};
 export default Share;

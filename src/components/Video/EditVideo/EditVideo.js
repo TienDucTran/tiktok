@@ -25,7 +25,10 @@ function EditVideo({ data, profile }, ref) {
                 observer.current.observe(videoRef.current);
             }
             return () => {
-                observer.current.unobserve(videoRef.current);
+                if (observer.current && videoRef.current) {
+                    // ✅ Prevent error
+                    observer.current.unobserve(videoRef.current);
+                }
             };
         }
     }, []);

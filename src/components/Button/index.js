@@ -1,12 +1,13 @@
-import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './Button.module.scss'
-import Theme from "~/layouts/component/Theme";
+import styles from './Button.module.scss';
+import Theme from '~/layouts/component/Theme';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
-function Button({ to,
+function Button({
+    to,
     href,
     children,
     primary = false,
@@ -25,28 +26,29 @@ function Button({ to,
     theme = false,
     className,
     onClick,
-    key,
-    ...passProps }) {
-    let Comp = 'button'
+    itemkey,
+    ...passProps
+}) {
+    let Comp = 'button';
     const props = {
         onClick,
-        key,
-        ...passProps
-    }
+        itemkey,
+        ...passProps,
+    };
     //! remove event listener when btn is disable
     if (disable) {
-        Object.keys(props).forEach(key => {
+        Object.keys(props).forEach((key) => {
             if (key.startsWith('on') && typeof props[key] === 'function')
                 delete props[key];
-        })
+        });
     }
     if (to) {
-        props.to = to
-        Comp = Link
+        props.to = to;
+        Comp = Link;
     }
     if (href) {
-        props.href = href
-        Comp = 'a'
+        props.href = href;
+        Comp = 'a';
     }
 
     const classes = cx('wrapper', {
@@ -63,11 +65,11 @@ function Button({ to,
         xlarge,
         circle,
         [className]: className,
-    })
+    });
     return (
         <Comp className={classes} {...props}>
             {icon && <span className={cx('icon')}>{icon}</span>}
-            <span >{children}</span>
+            <span>{children}</span>
             {theme && <Theme />}
         </Comp>
     );
@@ -75,7 +77,7 @@ function Button({ to,
 Button.propTypes = {
     to: PropTypes.string,
     href: PropTypes.string,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     primary: PropTypes.bool,
     upload: PropTypes.bool,
     outline: PropTypes.bool,
@@ -91,7 +93,7 @@ Button.propTypes = {
     icon: PropTypes.node,
     className: PropTypes.string,
     onClick: PropTypes.func,
-    key: PropTypes.number,
-}
+    itemkey: PropTypes.number,
+};
 
 export default Button;

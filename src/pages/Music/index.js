@@ -1,5 +1,5 @@
 function MusicPage() {
-    return (<h2>Music page</h2>);
+    return <div>Music page</div>;
 }
 
 export default MusicPage;

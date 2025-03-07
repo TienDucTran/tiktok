@@ -71,7 +71,7 @@ function Profile() {
                     <Image className={cx('avatar')} src={avatar} alt={'oke'} />
                     <div className={cx('info')}>
                         <p className={cx('name')}>
-                            <h2>
+                            <span>
                                 {profile_username}
                                 {tick && (
                                     <FontAwesomeIcon
@@ -79,7 +79,7 @@ function Profile() {
                                         icon={faCheckCircle}
                                     />
                                 )}
-                            </h2>
+                            </span>
                         </p>
                         <span className={cx('username')}>
                             {first_name} {last_name}

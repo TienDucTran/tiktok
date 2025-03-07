@@ -7,29 +7,25 @@ import Tippy from '@tippyjs/react';
 // const cx = classNames.bind(styles)
 
 function Inbox({ children }) {
-    // const renderItem = () => {
-    //     <h2>hihi</h2>
-    // }
     return (
         <Tippy
             interactive
-            trigger='click'
-            content='Inbox'
-            placement='bottom'
-        // render={attrs => (
-        //     <div className={cx('inbox-list')} tabIndex="-1" {...attrs}>
-        //         <PopperWrapper className={cx('inbox-popper')} >
-        //             {renderItem()}
-        //         </PopperWrapper>
-        //     </div>
-        // )}
+            trigger="click"
+            content="Inbox"
+            placement="bottom"
+            // render={attrs => (
+            //     <div className={cx('inbox-list')} tabIndex="-1" {...attrs}>
+            //         <PopperWrapper className={cx('inbox-popper')} >
+            //             {renderItem()}
+            //         </PopperWrapper>
+            //     </div>
+            // )}
         >
             {children}
         </Tippy>
-    )
+    );
 }
 Inbox.propTypes = {
-    children: PropTypes.node.isRequired
-}
-export default Inbox
-
+    children: PropTypes.node.isRequired,
+};
+export default Inbox;

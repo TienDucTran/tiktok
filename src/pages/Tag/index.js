@@ -1,5 +1,5 @@
 function Tag() {
-    return (<h2>Tag page</h2>);
+    return <span>Tag page</span>;
 }
 
 export default Tag;

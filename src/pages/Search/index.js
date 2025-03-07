@@ -1,5 +1,5 @@
 function Search() {
-    return (<h2>Search page</h2>);
+    return <span>Search page</span>;
 }
 
 export default Search;

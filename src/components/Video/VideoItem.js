@@ -28,6 +28,7 @@ function VideoItem({ data }) {
     const place = false;
     const videoRef = useRef();
     const [isPlaying, setIsPlaying] = useState(true);
+
     const [isMuted, setIsMuted] = useState(true);
     const [volume, setVolume] = useState(0.5);
 
