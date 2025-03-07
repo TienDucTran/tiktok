@@ -47,7 +47,6 @@ function VideoItemProfile({ data, profile }) {
 
     const handleClickSound = () => {
         setIsMuted(!isMuted);
-        videoRef.current?.toggleMute();
     };
 
     return (

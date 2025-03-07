@@ -24,12 +24,11 @@ import AccountItems from '../SuggestedAccounts/AccountItems';
 import Share from '../Popper/Share/Share';
 const cx = classNames.bind(styles);
 
-function VideoItem({ data }) {
+function VideoItem({ data, isMuted, setIsMuted }) {
     const place = false;
     const videoRef = useRef();
     const [isPlaying, setIsPlaying] = useState(true);
 
-    const [isMuted, setIsMuted] = useState(true);
     const [volume, setVolume] = useState(0.5);
 
     const handleClick = () => {
@@ -49,7 +48,6 @@ function VideoItem({ data }) {
 
     const handleClickSound = () => {
         setIsMuted(!isMuted);
-        videoRef.current?.toggleMute();
     };
 
     return (
@@ -106,7 +104,12 @@ function VideoItem({ data }) {
 
                 <div className={cx('footer')}>
                     <div className={cx('video')}>
-                        <EditVideo data={data} ref={videoRef} profile={false} />
+                        <EditVideo
+                            data={data}
+                            ref={videoRef}
+                            profile={false}
+                            isMuted={isMuted}
+                        />
                         <p className={cx('icon-flag')}>
                             <ReportIcon className={cx('mr4')} />
                             Report

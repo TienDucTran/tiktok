@@ -4,7 +4,7 @@ import { useRef, useImperativeHandle, forwardRef, useEffect } from 'react';
 
 import styles from './EditVideo.module.scss';
 const cx = classNames.bind(styles);
-function EditVideo({ data, profile }, ref) {
+function EditVideo({ data, profile, isMuted }, ref) {
     const videoRef = useRef();
     const observer = useRef();
     useEffect(() => {
@@ -31,13 +31,17 @@ function EditVideo({ data, profile }, ref) {
                 }
             };
         }
-    }, []);
+    }, [profile]);
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.muted = isMuted;
+        }
+    }, [isMuted]);
 
     useImperativeHandle(ref, () => ({
         play: () => videoRef.current?.play(),
         pause: () => videoRef.current?.pause(),
         setVolume: (volume) => (videoRef.current.volume = volume),
-        toggleMute: () => (videoRef.current.muted = !videoRef.current.muted),
     }));
 
     return (
@@ -46,7 +50,6 @@ function EditVideo({ data, profile }, ref) {
             className={cx('wrapper')}
             src={data.file_url}
             loop
-            muted
         />
     );
 }
