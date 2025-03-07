@@ -136,7 +136,7 @@
 .video-container {
     .video-feedtab {
         position: relative;
-        width: 460px;
+        width: 560px;
         height: 44px;
         margin-bottom: 8px;
         display: flex;
@@ -186,7 +186,7 @@
         margin-left: 6px;
     }
     &:hover ~ .bottom-line {
-        transform: translateX(230px);
+        transform: translateX(280px);
     }
 }
 .bottom-line {
@@ -231,4 +231,7 @@
     font-weight: 400;
     color: var(--text-gray-color);
     margin-top: 8px;
+}
+.video-profile {
+    display: flex;
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
+import { VideoItemProfile } from '../../components/Video/';
 
 import Button from '~/components/Button';
 import {
@@ -161,7 +162,15 @@ function Profile() {
                     <div className={cx('bottom-line')}></div>
                 </div>
                 {videos.length > 0 ? (
-                    ''
+                    <div className={cx('video-profile')}>
+                        {videos.map((video) => (
+                            <VideoItemProfile
+                                key={video.id}
+                                data={video}
+                                profile={true}
+                            />
+                        ))}
+                    </div>
                 ) : (
                     <main className={cx('video-main-wrapper')}>
                         <div className={cx('video-err')}>
